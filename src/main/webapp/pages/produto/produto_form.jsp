@@ -53,20 +53,6 @@
 					</div>
 
 					<div class="form-group">
-						<label class="control-label col-lg-2">Código</label>
-						<div class="col-lg-4">
-							<div class="input-group col-xs-5">
-								<form:input type="text" class="form-control" required="true"
-									id="#" placeholder="Digite o código" path="codigo"
-									cssErrorClass="field_error form-control" />
-								<form:errors path="codigo" cssClass="text-danger"
-									class="has-error" />
-							</div>
-						</div>
-
-					</div>
-
-					<div class="form-group">
 						<label class="control-label col-lg-2">Tipo de Produto</label>
 						<div class="col-lg-4">
 							<div class="input-group col-xs-5">
