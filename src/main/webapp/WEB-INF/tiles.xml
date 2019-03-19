@@ -1,0 +1,1239 @@
+<!--?xml version="1.0" encoding="UTF-8"? -->  
+ <!DOCTYPE tiles-definitions PUBLIC  
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<definition name="baseLayout"
+		template="/layout/simpleLayout.jsp">
+		<put-attribute name="meta" value="/layout/meta.jsp" />
+		<put-attribute name="header" value="/layout/header.jsp" />
+		<put-attribute name="menu" value="/layout/menu.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/layout/footer.jsp" />
+		<put-attribute name="javascript"
+			value="/layout/javascript.jsp" />
+	</definition>
+
+	<definition name="baseLayoutLogin"
+		template="/layout/simpleLayoutLogin.jsp">
+		<put-attribute name="meta" value="/layout/meta.jsp" />
+		<put-attribute name="header" value="/layout/header.jsp" />
+		<put-attribute name="menu" value="/layout/menu.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/layout/footer.jsp" />
+		<put-attribute name="javascript"
+			value="/layout/javascript.jsp" />
+	</definition>
+
+	<definition name="404" extends="baseLayout">
+		<put-attribute name="body" value="/pages/404.jsp" />
+	</definition>
+
+	<definition name="login" extends="baseLayoutLogin">
+		<put-attribute name="meta" value="/layout/meta.jsp" />
+		<put-attribute name="header" value="/layout/header.jsp" />
+		<put-attribute name="menu" value="/layout/menuLogin.jsp" />
+		<put-attribute name="footer" value="/layout/footer.jsp" />
+		<put-attribute name="javascript"
+			value="/layout/javascript.jsp" />
+		<put-attribute name="body" value="/pages/login.jsp" />
+	</definition>
+	<definition name="baseLayoutRelatorio"
+		template="/layout/simpleLayoutRelatorio.jsp">
+		<put-attribute name="meta" value="/layout/meta.jsp" />
+		<put-attribute name="header" value="/layout/header.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="javascript"
+			value="/layout/javascript.jsp" />
+	</definition>
+
+	<definition name="selecionar-cliente" extends="baseLayout">
+		<put-attribute name="meta" value="/layout/meta.jsp" />
+		<put-attribute name="header" value="/layout/header.jsp" />
+		<put-attribute name="menu"
+			value="/layout/menuSelecao.jsp" />
+		<put-attribute name="footer" value="/layout/footer.jsp" />
+		<put-attribute name="javascript"
+			value="/layout/javascript.jsp" />
+		<put-attribute name="body"
+			value="/pages/selecaoCliente.jsp" />
+	</definition>
+
+	<definition name="alterar.senha.sem.menu"
+		extends="baseLayout">
+		<put-attribute name="meta" value="/layout/meta.jsp" />
+		<put-attribute name="header" value="/layout/header.jsp" />
+		<put-attribute name="menu" value="/layout/menuLogin.jsp" />
+		<put-attribute name="footer" value="/layout/footer.jsp" />
+		<put-attribute name="javascript"
+			value="/layout/javascript.jsp" />
+		<put-attribute name="body"
+			value="/pages/usuario/alterar_senha.jsp" />
+	</definition>
+
+	<definition name="erroLogin" extends="baseLayout">
+		<put-attribute name="meta" value="/layout/meta.jsp" />
+		<put-attribute name="header" value="/layout/header.jsp" />
+		<put-attribute name="menu" value="/layout/menu.jsp" />
+		<put-attribute name="footer" value="/layout/footer.jsp" />
+		<put-attribute name="javascript"
+			value="/layout/javascript.jsp" />
+		<put-attribute name="body" value="/pages/erroLogin.jsp" />
+	</definition>
+
+	<definition name="500" extends="baseLayout">
+		<put-attribute name="body" value="/pages/500.jsp" />
+	</definition>
+
+	<!-- HOME -->
+	<definition name="home" extends="baseLayout">
+		<put-attribute name="body" value="/pages/home.jsp" />
+	</definition>
+
+	<!-- CLIENTE -->
+	<definition name="clientes" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/cliente/clientes.jsp" />
+		<put-attribute name="list" value="cliente.lista"
+			cascade="true" />
+	</definition>
+
+	<definition name="cliente.lista"
+		template="/pages/cliente/cliente_lista.jsp">
+		<put-attribute name="paginacao"
+			value="/pages/paginacao.jsp" />
+	</definition>
+
+	<definition name="cliente_incluir" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/cliente/cliente_incluir.jsp" />
+		<put-attribute name="camposForm"
+			value="/pages/cliente/cliente_form.jsp" cascade="true" />
+	</definition>
+
+	<definition name="cliente_alterar" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/cliente/cliente_alterar.jsp" />
+		<put-attribute name="camposForm"
+			value="/pages/cliente/cliente_form.jsp" cascade="true" />
+	</definition>
+
+	<definition name="cliente_visualizar" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/cliente/cliente_visualizar.jsp" />
+	</definition>
+
+	<!-- PLANOS -->
+	<definition name="planos" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/plano/planos.jsp" />
+		<put-attribute name="list" value="plano.lista"
+			cascade="true" />
+	</definition>
+
+	<definition name="plano.lista"
+		template="/pages/plano/plano_lista.jsp">
+		<put-attribute name="paginacao"
+			value="/pages/paginacao.jsp" />
+	</definition>
+
+	<definition name="plano_incluir" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/plano/plano_incluir.jsp" />
+		<put-attribute name="camposForm"
+			value="/pages/plano/plano_form.jsp" cascade="true" />
+	</definition>
+
+	<definition name="plano_alterar" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/plano/plano_alterar.jsp" />
+		<put-attribute name="camposForm"
+			value="/pages/plano/plano_form.jsp" cascade="true" />
+	</definition>
+
+	<definition name="plano_visualizar" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/plano/plano_visualizar.jsp" />
+	</definition>
+
+	<!-- EXAMES -->
+	<definition name="exames" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/exame/exames.jsp" />
+		<put-attribute name="list" value="exame.lista"
+			cascade="true" />
+	</definition>
+
+	<definition name="exame.lista"
+		template="/pages/exame/exame_lista.jsp">
+		<put-attribute name="paginacao"
+			value="/pages/paginacao.jsp" />
+	</definition>
+
+	<definition name="exame_incluir" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/exame/exame_incluir.jsp" />
+		<put-attribute name="camposForm"
+			value="/pages/exame/exame_form.jsp" cascade="true" />
+	</definition>
+
+	<definition name="exame_alterar" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/exame/exame_alterar.jsp" />
+	</definition>
+
+	<definition name="exame_visualizar" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/exame/exame_visualizar.jsp" />
+	</definition>
+
+	<definition name="beneficiarioExames" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/exame/beneficiarioExames.jsp" />
+	</definition>
+
+	<definition name="beneficiarioExame_incluir"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/exame/beneficiarioExame_incluir.jsp" />
+	</definition>
+
+	<definition name="beneficiarioExame_visualizar"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/exame/beneficiarioExame_visualizar.jsp" />
+	</definition>
+
+	<definition name="emitir-comprovante-gerar"
+		extends="baseLayoutRelatorio">
+		<put-attribute name="body"
+			value="/pages/exame/emitir-comprovante-gerar.jsp" />
+	</definition>
+
+	<!-- GRUPO -->
+
+	<definition name="grupos" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/grupo/grupos.jsp" />
+	</definition>
+
+	<definition name="grupo_procedimento_incluir"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/grupo/grupo_procedimento_incluir.jsp" />
+
+	</definition>
+
+	<definition name="procedimento_incluir" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/grupo/procedimento_incluir.jsp" />
+		<put-attribute name="camposForm"
+			value="/pages/grupo/procedimento__form.jsp" cascade="true" />
+	</definition>
+
+	<definition name="procedimento_alterar" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/grupo/procedimento_alterar.jsp" />
+		<put-attribute name="camposForm"
+			value="/pages/grupo/procedimento_alterar.jsp" cascade="true" />
+	</definition>
+
+	<definition name="grupo_procedimento_visualizar"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/grupo/grupo_procedimento_visualizar.jsp" />
+	</definition>
+
+	<definition name="adicionar_procedimento"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/grupo/grupo_procedimento_adicionar_procedimento.jsp" />
+	</definition>
+
+	<definition name="procedimento_visualizar"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/grupo/procedimento_visualizar.jsp" />
+	</definition>
+
+	<definition name="procedimento_listar" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/grupo/procedimento_lista.jsp" />
+	</definition>
+
+	<!-- TABELA -->
+	<definition name="tabela.pagina" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/exame/tabelas.jsp" />
+		<put-attribute name="list" value="tabela.lista"
+			cascade="true" />
+	</definition>
+
+	<definition name="faixas" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/tabela/faixas.jsp" />
+	</definition>
+
+	<definition name="tabela_faixa_incluir" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/tabela/tabela_faixa_incluir.jsp" />
+	</definition>
+
+	<definition name="tabela_faixa_visualizar"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/tabela/tabela_faixa_visualizar.jsp" />
+	</definition>
+
+	<definition name="tabela_incluir" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/exame/tabela_incluir.jsp" />
+		<put-attribute name="camposForm"
+			value="/pages/exame/tabela_form.jsp" cascade="true" />
+	</definition>
+
+	<definition name="tabela.lista"
+		template="/pages/exame/tabela_lista.jsp">
+		<put-attribute name="paginacao"
+			value="/pages/paginacao.jsp" />
+	</definition>
+
+	<definition name="tabela_visualizar" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/exame/tabela_visualizar.jsp" />
+	</definition>
+
+	<definition name="tabela_alterar" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/exame/tabela_alterar.jsp" />
+	</definition>
+
+	<definition name="tabela_exame_incluir" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/exame/tabela_exame_incluir.jsp" />
+		<put-attribute name="camposForm"
+			value="/pages/exame/tabela_exame_form.jsp" cascade="true" />
+	</definition>
+
+
+	<!-- MEDICOS -->
+	<definition name="medicos" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/medico/medicos.jsp" />
+		<put-attribute name="list" value="medico.lista"
+			cascade="true" />
+	</definition>
+
+	<definition name="medico.lista"
+		template="/pages/medico/medico_lista.jsp">
+		<put-attribute name="paginacao"
+			value="/pages/paginacao.jsp" />
+	</definition>
+
+	<definition name="medico_incluir" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/medico/medico_incluir.jsp" />
+		<put-attribute name="camposForm"
+			value="/pages/medico/medico_form.jsp" cascade="true" />
+	</definition>
+
+	<definition name="medico_alterar" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/medico/medico_alterar.jsp" />
+	</definition>
+
+	<definition name="medico_visualizar" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/medico/medico_visualizar.jsp" />
+	</definition>
+
+	<!-- PACIENTES -->
+	<definition name="pacientes" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/paciente/pacientes.jsp" />
+		<put-attribute name="list" value="paciente.lista"
+			cascade="true" />
+	</definition>
+
+	<!-- PACIENTES -->
+	<definition name="relatorio-pacientes" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/paciente/relatorio-pacientes.jsp" />
+	</definition>
+	<definition name="relatorio-pacientes-gerar"
+		extends="baseLayoutRelatorio">
+		<put-attribute name="body"
+			value="/pages/paciente/relatorio-pacientes-gerar.jsp" />
+	</definition>
+
+	<definition name="emitir-nota-gerar"
+		extends="baseLayoutRelatorio">
+		<put-attribute name="body"
+			value="/pages/consulta/emitir-nota-gerar.jsp" />
+	</definition>
+
+	<definition name="paciente.lista"
+		template="/pages/paciente/paciente_lista.jsp">
+		<put-attribute name="paginacao"
+			value="/pages/paginacao.jsp" />
+	</definition>
+
+	<definition name="paciente_incluir" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/paciente/paciente_incluir.jsp" />
+		<put-attribute name="camposForm"
+			value="/pages/paciente/paciente_form.jsp" cascade="true" />
+	</definition>
+
+	<definition name="dependente_incluir" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/paciente/dependente_incluir.jsp" />
+	</definition>
+
+	<definition name="cobranca_incluir" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/paciente/cobranca_incluir.jsp" />
+	</definition>
+
+	<definition name="cobranca_avulsa_incluir"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/paciente/cobranca_avulsa_incluir.jsp" />
+	</definition>
+
+	<definition name="cobranca_avulsa_visualizar"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/paciente/cobranca_avulsa_visualizar.jsp" />
+	</definition>
+
+	<definition name="dados_cobranca_incluir"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/paciente/dados_cobranca_incluir.jsp" />
+	</definition>
+
+	<definition name="dados_cobranca_visualizar"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/paciente/dados_cobranca_visualizar.jsp" />
+	</definition>
+
+	<definition name="dados_cobranca_alterar"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/paciente/dados_cobranca_alterar.jsp" />
+	</definition>
+
+	<definition name="paciente_alterar" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/paciente/paciente_alterar.jsp" />
+		<!-- <put-attribute name="camposForm" value="/pages/paciente/paciente_form.jsp" 
+			cascade="true" /> -->
+	</definition>
+
+	<definition name="paciente_visualizar" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/paciente/paciente_visualizar.jsp" />
+	</definition>
+
+	<definition name="receita" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/paciente/receita.jsp" />
+	</definition>
+
+
+
+	<!-- AGENDAMENTO -->
+	<definition name="agendamentos" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/agendamento/agendamentos.jsp" />
+		<put-attribute name="list" value="lista.agendamento"
+			cascade="true" />
+	</definition>
+
+	<!-- AGENDAMENTO -->
+
+	<definition name="calendarios" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/agendamento/calendarios.jsp" />
+	</definition>
+
+	<definition name="agendamento-usuario" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/agendamentoUsuario.jsp" />
+	</definition>
+
+	<definition name="lista.agendamento"
+		template="/pages/agendamento/agendamento_lista.jsp">
+		<put-attribute name="paginacao"
+			value="/pages/paginacao.jsp" />
+	</definition>
+
+	<definition name="agendamento" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/agendamento/agendamento.jsp" />
+		<put-attribute name="list" value="lista.agendamento"
+			cascade="true" />
+	</definition>
+
+	<definition name="agendamento_visualizar"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/agendamento/agendamento_visualizar.jsp" />
+	</definition>
+
+	<definition name="agendamento_alterar" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/agendamento/agendamento_alterar.jsp" />
+		<put-attribute name="camposForm"
+			value="/pages/agendamento/agendamento_form.jsp" cascade="true" />
+	</definition>
+
+
+	<definition name="lista.agendamento.visualizar"
+		template="/pages/agendamento/agendamento_lista_visualizar.jsp" />
+
+
+	<definition name="agendamento.incluir" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/agendamento/agendamento_incluir.jsp" />
+		<put-attribute name="camposForm"
+			value="/pages/agendamento/agendamento_form.jsp" cascade="true" />
+	</definition>
+
+	<definition name="agendamento.paciente" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/agendamento/pacientes.jsp" />
+		<put-attribute name="list"
+			value="agendamento.paciente.lista" cascade="true" />
+	</definition>
+	<definition name="agendamento.paciente.lista"
+		template="/pages/agendamento/paciente_lista.jsp">
+		<put-attribute name="paginacao"
+			value="/pages/paginacao.jsp" />
+	</definition>
+
+	<!-- CONSULTA -->
+	<definition name="consultas" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/consulta/consultas.jsp" />
+		<put-attribute name="list" value="lista.consulta"
+			cascade="true" />
+	</definition>
+
+	<definition name="lista.consulta"
+		template="/pages/consulta/consulta_lista.jsp">
+		<put-attribute name="paginacao"
+			value="/pages/paginacao.jsp" />
+	</definition>
+
+	<definition name="consulta_visualizar" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/consulta/consulta_visualizar.jsp" />
+	</definition>
+
+	<definition name="consulta_alterar" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/consulta/consulta_alterar.jsp" />
+		<put-attribute name="camposForm"
+			value="/pages/consulta/consulta_form.jsp" cascade="true" />
+	</definition>
+
+
+	<definition name="lista.consulta.visualizar"
+		template="/pages/consulta/consulta_lista_visualizar.jsp" />
+
+
+	<definition name="consulta.incluir" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/consulta/consulta_incluir.jsp" />
+		<put-attribute name="camposForm"
+			value="/pages/consulta/consulta_form.jsp" cascade="true" />
+	</definition>
+
+	<definition name="consulta.paciente" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/consulta/pacientes.jsp" />
+		<put-attribute name="list"
+			value="consulta.paciente.lista" cascade="true" />
+	</definition>
+	<definition name="consulta.paciente.lista"
+		template="/pages/consulta/paciente_lista.jsp">
+		<put-attribute name="paginacao"
+			value="/pages/paginacao.jsp" />
+	</definition>
+
+	<!-- Relatorio Faturamento Mes -->
+	<definition name="relatorio-faturamento-mensal"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/consulta/relatorio-faturamento-mensal.jsp" />
+	</definition>
+	<definition name="relatorio-faturamento-mensal-gerar"
+		extends="baseLayoutRelatorio">
+		<put-attribute name="body"
+			value="/pages/consulta/relatorio-faturamento-mensal-gerar.jsp" />
+	</definition>
+
+	<!-- Relatorio Faturamento Dia -->
+	<definition name="relatorio-faturamento-dia"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/consulta/relatorio-faturamento-dia.jsp" />
+	</definition>
+	<definition name="relatorio-faturamento-dia-gerar"
+		extends="baseLayoutRelatorio">
+		<put-attribute name="body"
+			value="/pages/consulta/relatorio-faturamento-dia-gerar.jsp" />
+	</definition>
+
+
+	<!-- USUARIO -->
+	<definition name="usuarios" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/usuario/usuarios.jsp" />
+		<put-attribute name="list" value="usuario.lista"
+			cascade="true" />
+	</definition>
+
+	<definition name="usuario.lista"
+		template="/pages/usuario/usuario_lista.jsp">
+		<put-attribute name="paginacao"
+			value="/pages/paginacao.jsp" />
+	</definition>
+
+	<definition name="usuario_incluir" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/usuario/usuario_incluir.jsp" />
+		<put-attribute name="camposForm"
+			value="/pages/usuario/usuario_form.jsp" cascade="true" />
+	</definition>
+
+	<definition name="usuario_alterar" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/usuario/usuario_alterar.jsp" />
+		<put-attribute name="camposForm"
+			value="/pages/usuario/usuario_form.jsp" cascade="true" />
+	</definition>
+
+	<definition name="usuario_visualizar" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/usuario/usuario_visualizar.jsp" />
+	</definition>
+
+	<definition name="usuario_gerenciar_cliente"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/usuario/usuario_gerenciar_cliente.jsp" />
+	</definition>
+
+	<!-- PERFIL -->
+	<definition name="perfis" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/usuario/perfis.jsp" />
+		<put-attribute name="list" value="perfil.lista"
+			cascade="true" />
+	</definition>
+
+	<definition name="perfil.lista"
+		template="/pages/usuario/perfil_lista.jsp">
+		<put-attribute name="paginacao"
+			value="/pages/paginacao.jsp" />
+	</definition>
+
+	<definition name="perfil_incluir" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/usuario/perfil_incluir.jsp" />
+		<put-attribute name="camposForm"
+			value="/pages/usuario/perfil_form.jsp" cascade="true" />
+	</definition>
+
+	<definition name="perfil_alterar" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/usuario/perfil_alterar.jsp" />
+		<put-attribute name="camposForm"
+			value="/pages/usuario/perfil_form.jsp" cascade="true" />
+	</definition>
+
+	<definition name="perfil_visualizar" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/usuario/perfil_visualizar.jsp" />
+	</definition>
+
+	<definition name="adicionar-perfil" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/usuario/adicionar-perfil-usuario.jsp" />
+		<put-attribute name="camposForm"
+			value="perfil.usuario.form" cascade="true" />
+	</definition>
+	<definition name="perfil.usuario.form"
+		template="/pages/usuario/perfil_usuario_form.jsp">
+		<put-attribute name="paginacao"
+			value="/pages/paginacao.jsp" />
+		<put-attribute name="list" value="perfis.usuario.lista"
+			cascade="true" />
+	</definition>
+	<definition name="perfis.usuario.lista"
+		template="/pages/usuario/perfil_usuario_lista.jsp">
+		<put-attribute name="paginacao"
+			value="/pages/paginacao.jsp" />
+	</definition>
+
+	<!-- REPRESENTANTE -->
+
+	<definition name="representante_incluir"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/representante/representante_incluir.jsp" />
+		<put-attribute name="camposForm"
+			value="/pages/representante/representante_form.jsp" cascade="true" />
+	</definition>
+
+	<definition name="representante_alterar"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/representante/representante_alterar.jsp" />
+		<put-attribute name="camposForm"
+			value="/pages/representante/representante_form.jsp" cascade="true" />
+	</definition>
+
+	<definition name="representantes" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/representante/representantes.jsp" />
+		<put-attribute name="list" value="representante.lista"
+			cascade="true" />
+		<put-attribute name="paginacao"
+			value="/pages/paginacao.jsp" />
+	</definition>
+
+	<definition name="representante.lista"
+		template="/pages/representante/representante_lista.jsp">
+		<put-attribute name="paginacao"
+			value="/pages/paginacao.jsp" />
+	</definition>
+
+	<definition name="representante_visualizar"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/representante/representante_visualizar.jsp" />
+	</definition>
+
+	<!-- SUPERVISOR -->
+
+	<definition name="supervisores" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/supervisor/supervisores.jsp" />
+		<put-attribute name="list" value="supervisor.lista"
+			cascade="true" />
+	</definition>
+
+	<definition name="indice.lista"
+		template="/pages/supervisor/supervisor_lista.jsp">
+		<put-attribute name="paginacao"
+			value="/pages/paginacao.jsp" />
+	</definition>
+
+	<definition name="supervisor_incluir" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/supervisor/supervisor_incluir.jsp" />
+		<put-attribute name="camposForm"
+			value="/pages/supervisor/supervisor_form.jsp" cascade="true" />
+	</definition>
+
+	<definition name="supervisor_alterar" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/supervisor/supervisor_alterar.jsp" />
+		<put-attribute name="camposForm"
+			value="/pages/supervisor/supervisor_form.jsp" cascade="true" />
+	</definition>
+
+	<definition name="supervisor_visualizar"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/supervisor/supervisor_visualizar.jsp" />
+	</definition>
+
+
+	<!-- SOLICITAÇÕES -->
+
+	<definition name="solicitacoes" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/solicitacao/solicitacao.jsp" />
+	</definition>
+
+	<definition name="solicitacao.paciente" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/solicitacao/solicitacao_paciente.jsp" />
+	</definition>
+
+	<definition name="solicitacao.medico" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/solicitacao/solicitacao_medico.jsp" />
+	</definition>
+
+	<definition name="solicitacao.representante"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/solicitacao/solicitacao_representante.jsp" />
+	</definition>
+
+	<definition name="solicitacao.paciente.visualizar"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/solicitacao/solicitacao_paciente_visualizar.jsp" />
+	</definition>
+
+	<definition name="solicitacao.medico.visualizar"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/solicitacao/solicitacao_medico_visualizar.jsp" />
+	</definition>
+
+	<definition name="solicitacao.representante.visualizar"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/solicitacao/solicitacao_representante_visualizar.jsp" />
+	</definition>
+
+	<definition name="solicitacao.representante.reprovado"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/solicitacao/solicitacao_representante_detalhar_reprovado.jsp" />
+	</definition>
+
+	<definition name="solicitacao.medico.reprovado"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/solicitacao/solicitacao_medico_detalhar_reprovado.jsp" />
+	</definition>
+
+	<definition name="solicitacao.paciente.reprovado"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/solicitacao/solicitacao_paciente_detalhar_reprovado.jsp" />
+	</definition>
+
+	<definition name="solicitacao/exame" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/solicitacao/solicitacao_exame.jsp" />
+	</definition>
+
+	<definition name="solicitacao.exame" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/solicitacao/solicitacao_exame_visualizar.jsp" />
+	</definition>
+
+	<definition name="solicitacao.exame.detalhar"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/solicitacao/solicitacao_exame_detalhar.jsp" />
+	</definition>
+
+	<definition name="solicitacao/consulta" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/solicitacao/solicitacao_consulta.jsp" />
+	</definition>
+
+	<definition name="solicitacao.consulta.visualizar"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/solicitacao/solicitacao_consulta_visualizar.jsp" />
+	</definition>
+
+	<definition name="solicitacao.consulta.detalhar"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/solicitacao/solicitacao_consulta_detalhar.jsp" />
+	</definition>
+
+
+	<!-- RELATóRIO -->
+
+	<!-- ALTERAR SENHA -->
+	<definition name="alterar.senha" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/usuario/alterar_senha.jsp" />
+	</definition>
+
+	<definition name="teste" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/teste/teste.jsp" />
+	</definition>
+
+	<!-- PARAMETRIZAÇÃO -->
+
+	<definition name="parametrizacoes" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/parametrizacao/parametrizacoes.jsp" />
+		<put-attribute name="list" value="parametrizacao.lista"
+			cascade="true" />
+	</definition>
+
+	<definition name="parametrizacao.lista"
+		template="/pages/parametrizacao/parametrizacao_lista.jsp">
+		<put-attribute name="paginacao"
+			value="/pages/paginacao.jsp" />
+	</definition>
+
+	<definition name="parametrizacao_incluir"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/parametrizacao/parametrizacao_incluir.jsp" />
+		<put-attribute name="camposForm"
+			value="/pages/parametrizacao/parametrizacao_form.jsp" cascade="true" />
+	</definition>
+
+	<definition name="parametrizacao_alterar"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/parametrizacao/parametrizacao_alterar.jsp" />
+		<put-attribute name="camposForm"
+			value="/pages/parametrizacao/parametrizacao_form.jsp" cascade="true" />
+	</definition>
+
+	<definition name="parametrizacao_visualizar"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/parametrizacao/parametrizacao_visualizar.jsp" />
+	</definition>
+
+	<!-- INDICE -->
+
+	<definition name="indices" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/indice/indices.jsp" />
+		<put-attribute name="list" value="indice.lista"
+			cascade="true" />
+	</definition>
+
+	<definition name="indice.lista"
+		template="/pages/indice/indice_economico_lista.jsp">
+		<put-attribute name="paginacao"
+			value="/pages/paginacao.jsp" />
+	</definition>
+
+	<definition name="indice_economico_incluir"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/indice/indice_economico_incluir.jsp" />
+		<put-attribute name="camposForm"
+			value="/pages/indice/indice_economico_form.jsp" cascade="true" />
+	</definition>
+
+	<definition name="indice_economico_alterar"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/indice/indice_economico_alterar.jsp" />
+		<put-attribute name="camposForm"
+			value="/pages/indice/indice_economico_form.jsp" cascade="true" />
+	</definition>
+
+	<definition name="indice_economico_visualizar"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/indice/indice_economico_visualizar.jsp" />
+	</definition>
+
+	<!-- FINANCEIRO -->
+
+	<definition name="pagamentos" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/financeiro/pagamentos.jsp" />
+	</definition>
+
+	<definition name="contratosAtivos" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/financeiro/contratosAtivos.jsp" />
+	</definition>
+
+	<!-- CREDENCIADO -->
+
+	<definition name="credenciados" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/credenciado/credenciados.jsp" />
+		<put-attribute name="list" value="credenciado.lista"
+			cascade="true" />
+	</definition>
+
+	<definition name="credenciado.lista"
+		template="/pages/credenciado/credenciado_lista.jsp">
+		<put-attribute name="paginacao"
+			value="/pages/paginacao.jsp" />
+	</definition>
+
+	<definition name="credenciado_incluir" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/credenciado/credenciado_incluir.jsp" />
+		<put-attribute name="camposForm"
+			value="/pages/credenciado/credenciado_form.jsp" cascade="true" />
+	</definition>
+
+	<definition name="credenciado_alterar" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/credenciado/credenciado_alterar.jsp" />
+		<put-attribute name="camposForm"
+			value="/pages/credenciado/credenciado_form.jsp" cascade="true" />
+	</definition>
+
+	<definition name="credenciado_visualizar"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/credenciado/credenciado_visualizar.jsp" />
+	</definition>
+
+	<!-- EMPRESA -->
+
+	<definition name="empresas" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/empresa/empresas.jsp" />
+		<put-attribute name="list" value="empresa.lista"
+			cascade="true" />
+	</definition>
+
+	<definition name="empresa.lista"
+		template="/pages/empresa/empresa_lista.jsp">
+		<put-attribute name="paginacao"
+			value="/pages/paginacao.jsp" />
+	</definition>
+
+	<definition name="empresa_incluir" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/empresa/empresa_incluir.jsp" />
+		<put-attribute name="camposForm"
+			value="/pages/empresa/empresa_form.jsp" cascade="true" />
+	</definition>
+
+	<definition name="empresa_alterar" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/empresa/empresa_alterar.jsp" />
+		<put-attribute name="camposForm"
+			value="/pages/empresa/empresa_form.jsp" cascade="true" />
+	</definition>
+
+	<definition name="empresa_visualizar" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/empresa/empresa_visualizar.jsp" />
+	</definition>
+
+	<!-- Especialidade -->
+
+
+	<definition name="especialidades" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/especialidade/especialidades.jsp" />
+		<put-attribute name="list" value="especialidade.lista"
+			cascade="true" />
+	</definition>
+
+	<definition name="especialidade.lista"
+		template="/pages/especialidade/especialidad_lista.jsp">
+		<put-attribute name="paginacao"
+			value="/pages/paginacao.jsp" />
+	</definition>
+
+	<definition name="especialidade_incluir"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/especialidade/especialidade_incluir.jsp" />
+		<put-attribute name="camposForm"
+			value="/pages/especialidade/especialidade_form.jsp" cascade="true" />
+	</definition>
+
+
+	<definition name="especialidade_alterar"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/especialidade/especialidade_alterar.jsp" />
+		<put-attribute name="camposForm"
+			value="/pages/especialidade/especialidade_form.jsp" cascade="true" />
+	</definition>
+
+	<definition name="especialidade_visualizar"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/especialidade/especialidade_visualizar.jsp" />
+	</definition>
+
+
+	<!-- CONTRATOS -->
+	<definition name="contratos" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/contrato/contratos.jsp" />
+		<put-attribute name="list" value="contrato.lista"
+			cascade="true" />
+	</definition>
+
+	<definition name="contrato.lista"
+		template="/pages/contrato/contrato_lista.jsp">
+		<put-attribute name="paginacao"
+			value="/pages/paginacao.jsp" />
+	</definition>
+
+	<definition name="contrato_incluir" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/contrato/contrato_incluir.jsp" />
+		<put-attribute name="camposForm"
+			value="/pages/contrato/contrato_form.jsp" cascade="true" />
+	</definition>
+
+	<definition name="contrato_alterar" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/contrato/contrato_alterar.jsp" />
+		<put-attribute name="camposForm"
+			value="/pages/contrato/contrato_form.jsp" cascade="true" />
+	</definition>
+
+	<definition name="contrato_visualizar" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/contrato/contrato_visualizar.jsp" />
+	</definition>
+
+	<!-- BENEFICIARIO FORMS -->
+
+	<definition name="beneficiario.gestao" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/paciente/beneficiario_forms.jsp" />
+	</definition>
+
+	<!-- CONTAS A RECEBER -->
+	<definition name="contas_receber" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/contas/contas_receber.jsp" />
+	</definition>
+
+	<definition name="contas_receber_incluir"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/contas/contas_receber_incluir.jsp" />
+		<put-attribute name="camposForm"
+			value="/pages/contas/contas_receber_form.jsp" cascade="true" />
+	</definition>
+
+	<!-- CONTAS A PAGAR -->
+	<definition name="contas_pagar" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/contas/contas_pagar.jsp" />
+	</definition>
+
+	<definition name="contas_pagar_incluir" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/contas/contas_pagar_incluir.jsp" />
+		<put-attribute name="camposForm"
+			value="/pages/contas/contas_pagar_form.jsp" cascade="true" />
+	</definition>
+
+	<!-- AUTORIZAÇÃO -->
+	<definition name="autorizacoes" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/autorizacao/autorizacoes.jsp" />
+	</definition>
+
+	<definition name="guia_consulta"
+		extends="baseLayoutRelatorio">
+		<put-attribute name="body"
+			value="/pages/autorizacao/guia_autorizacao_consulta.jsp" />
+	</definition>
+
+	<definition name="guia_sadp" extends="baseLayoutRelatorio">
+		<put-attribute name="body"
+			value="/pages/autorizacao/guia_autorizacao_sp_sadp.jsp" />
+	</definition>
+
+	<definition name="guia_cirurgia"
+		extends="baseLayoutRelatorio">
+		<put-attribute name="body"
+			value="/pages/autorizacao/guia_autorizacao_cirurgia.jsp" />
+	</definition>
+
+	<definition name="autorizacao_incluir" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/autorizacao/autorizacao_incluir_form.jsp" />
+	</definition>
+
+	<definition name="autorirazao_detalhar" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/autorizacao/autorizacao_detalhar_form.jsp" />
+	</definition>
+
+	<!-- HOSPITAL -->
+	<definition name="hospitais" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/hospital/hospitais.jsp" />
+	</definition>
+
+	<definition name="hospital_incluir" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/hospital/hospital_incluir_form.jsp" />
+	</definition>
+
+	<!-- FORNECEDOR -->
+	<definition name="fornecedores" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/fornecedor/fornecedores.jsp" />
+	</definition>
+
+	<definition name="fornecedor_incluir" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/fornecedor/fornecedor_incluir_form.jsp" />
+	</definition>
+	
+	<!-- RELATORIO -->
+	<definition name="relatorio-contas-pagar" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/relatorio/relatorio_contas_pagar.jsp" />
+	</definition>
+	
+	<definition name="relatorio-contas-receber" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/relatorio/relatorio_contas_receber.jsp" />
+	</definition>
+	
+	<definition name="relatorio-autorizacoes" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/relatorio/relatorio_autorizacoes.jsp" />
+	</definition>
+	
+	<!-- GUIA RELATORIOS -->
+	
+	<definition name="guia-relatorio-autorizacoes" extends="baseLayoutRelatorio">
+		<put-attribute name="body"
+			value="/pages/relatorio/guia_relatorio_autorizacoes.jsp" />
+	</definition>
+	
+	<definition name="guia-relatorio-contas-pagar" extends="baseLayoutRelatorio">
+		<put-attribute name="body"
+			value="/pages/relatorio/guia_relatorio_contas_pagar.jsp" />
+	</definition>
+	
+	<definition name="guia-relatorio-contas-receber" extends="baseLayoutRelatorio">
+		<put-attribute name="body"
+			value="/pages/relatorio/guia_relatorio_contas_receber.jsp" />
+	</definition>
+
+	<!-- PRODUTO -->
+
+	<definition name="produtos" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/produto/produtos.jsp" />
+		<put-attribute name="list" value="produto.lista"
+			cascade="true" />
+	</definition>
+
+	<definition name="produto.lista"
+		template="/pages/produto/produto_lista.jsp">
+		<put-attribute name="paginacao"
+			value="/pages/paginacao.jsp" />
+	</definition>
+
+	<definition name="produto_incluir" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/produto/produto_incluir.jsp" />
+		<put-attribute name="camposForm"
+			value="/pages/produto/produto_form.jsp" cascade="true" />
+	</definition>
+
+
+
+
+</tiles-definitions> 

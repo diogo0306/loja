@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<context:annotation-config />
+
+	<bean id="agendamentoRepository"
+		class="br.com.eclinic.hibernate.agendamento.AgendamentoHibernateDAO">
+		<constructor-arg ref="sessionFactory" />
+	</bean>
+
+	<bean id="pacienteRepository"
+		class="br.com.eclinic.hibernate.paciente.PacienteHibernateDAO">
+		<constructor-arg ref="sessionFactory" />
+	</bean>
+	<bean id="consultaRepository"
+		class="br.com.eclinic.hibernate.consulta.ConsultaHibernateDAO">
+		<constructor-arg ref="sessionFactory" />
+	</bean>
+	<bean id="medicoRepository"
+		class="br.com.eclinic.hibernate.medico.MedicoHibernateDAO">
+		<constructor-arg ref="sessionFactory" />
+	</bean>
+	<bean id="exameRepository"
+		class="br.com.eclinic.hibernate.exame.ExameHibernateDAO">
+		<constructor-arg ref="sessionFactory" />
+	</bean>
+	<bean id="planoRepository"
+		class="br.com.eclinic.hibernate.plano.PlanoHibernateDAO">
+		<constructor-arg ref="sessionFactory" />
+	</bean>
+	<bean id="eventoRepository"
+		class="br.com.eclinic.hibernate.evento.EventoHibernateDAO">
+		<constructor-arg ref="sessionFactory" />
+	</bean>
+	<bean id="empresaRepository"
+		class="br.com.eclinic.hibernate.empresa.EmpresaHibernateDAO">
+		<constructor-arg ref="sessionFactory" />
+	</bean>
+<!-- 	<bean id="parametrizacaoRepository"
+		class="br.com.eclinic.hibernate.parametrizacao.ParametrizacaoHibernateDAO">
+		<constructor-arg ref="sessionFactory" />
+	</bean>
+	<bean id="indiceEconomicoRepository"
+		class="br.com.eclinic.hibernate.indice.IndiceEconomicoHibernateDAO">
+		<constructor-arg ref="sessionFactory" />
+	</bean>
+	<bean id="credenciadoRepository"
+		class="br.com.eclinic.hibernate.credenciado.CredenciadoHibernateDAO">
+		<constructor-arg ref="sessionFactory" />
+	</bean> -->
+
+	<!-- API -->
+	<bean id="consultorioRepository"
+		class="br.com.eclinic.saogabriel.api.hibernate.consultorio.ApiConsultorioHibernateDAO">
+		<constructor-arg ref="sessionFactory" />
+	</bean>
+
+</beans>
