@@ -54,7 +54,6 @@
 	 	<mapping class="br.com.eclinic.entity.procedimento.Procedimento" />
 	 	<mapping class="br.com.eclinic.entity.documentacao.Documentacao" />
 	 	<mapping class="br.com.eclinic.entity.solicitacao.SolicitacaoConsulta" />
-	 	<mapping class="br.com.eclinic.entity.indice.IndiceEconomico" />
 	 	<mapping class="br.com.eclinic.entity.especialidade.Especialidade" />
 	 	<mapping class="br.com.eclinic.entity.procedimento.RelacaoGrupoProcedimento" />
 	 	<mapping class="br.com.eclinic.entity.paciente.Cobranca" />
@@ -68,6 +67,7 @@
 	 	<mapping class="br.com.eclinic.entity.fornecedor.Fornecedor" />
 	 	<mapping class="br.com.eclinic.entity.caixa.Caixa" />
 	 	<mapping class="br.com.eclinic.entity.produto.Produto" />
+	 	<mapping class="br.com.eclinic.entity.clienteLoja.ClienteLoja" />
 	 	
 	 	
 	 	<!-- API -->

@@ -260,30 +260,41 @@
 						<li class="navigation-header"><span>Menu</span> <i
 							class="icon-menu" title="Main pages"></i></li>
 						<li><a href="${raiz}"><i class="icon-home4"></i> <span>Dashboard</span></a></li>
-						<li><a href="#"><i class="icon-stack2"></i> <span>Gestão</span></a>
+						<li><a href="#"><i class="icon-stack4"></i> <span>Gerenciamento
+									de Vendas</span></a>
 							<ul>
+								<li><a href="${raiz}vendas">Painel de Venda</a></li>
+							</ul></li>
+						<li><a href="#"><i class="icon-stack2"></i> <span>Cadastros</span></a>
+							<ul>
+
+								<li><a href="${raiz}usuariosLoja">Usuários</a></li>
 								<li><a href="${raiz}produtos">Produtos</a></li>
-								<%-- <li><a href="${raiz}contratos">Contratos</a></li> --%>								
-								<li><a href="${raiz}planos">Planos</a></li>
-								<%-- <li><a href="${raiz}grupos">Grupos/Procedimentos</a></li> --%>	
-								<li><a href="${raiz}exames">Exames</a></li>							
+								<li><a href="${raiz}clientesLoja">Clientes</a></li>
+
+								<%-- <li><a href="${raiz}contratos">Contratos</a></li> --%>
+								<%-- <li><a href="${raiz}planos">Planos</a></li> --%>
+								<%-- <li><a href="${raiz}grupos">Grupos/Procedimentos</a></li> --%>
+								<%-- <li><a href="${raiz}exames">Exames</a></li>	 --%>
 								<%-- <li><a href="${raiz}clientes">Unidades</a></li> --%>
-								<li><a href="${raiz}hospitais">Hospitais</a></li>
+								<%-- <li><a href="${raiz}hospitais">Hospitais</a></li>
 								<li><a href="${raiz}fornecedores">Fornecedores</a></li>
 								<li><a href="${raiz}pacientes">Beneficiários</a></li>							
 								<li><a href="${raiz}representantes">Representantes</a></li>
 								<li><a href="${raiz}credenciados">Credenciados</a></li>
-								<li><a href="${raiz}supervisores">Supervisores</a></li>
+								<li><a href="${raiz}supervisores">Supervisores</a></li> --%>
 							</ul></li>
 
-					<!--	<li><a href="#"><i class="icon-stack3"></i> <span>Exames
+
+
+						<!--	<li><a href="#"><i class="icon-stack3"></i> <span>Exames
 									- Procedimentos</span></a>
 							<ul>
 								<li><a href="${raiz}tabelas">Tabelas de Preço</a></li>
 								<li><a href="${raiz}exames">Exames/Procedimentos</a></li>
 								<li><a href="${raiz}beneficiarioExames">Beneficiário/Exames</a></li>
 							</ul></li> -->
-				<!--  	 <li><a href="#"><i class="icon-stack3"></i> <span>Consultas
+						<!--  	 <li><a href="#"><i class="icon-stack3"></i> <span>Consultas
 									- Agendamentos</span></a>
 							<ul>
 								<li><a href="${raiz}consultas">Consulta</a></li>
@@ -291,7 +302,7 @@
 								<li><a href="${raiz}agendamentos">Agendamento</a></li>
 								<li><a href="${raiz}agendamento">Consultas Por Médico</a></li>
 								<li><a href="${raiz}calendarios">Agendamento - SMEC</a></li>
-							</ul></li> -->	
+							</ul></li> -->
 						<!-- 
 						<li><a href="#"><i class="icon-stack4"></i> <span>Agendamento</span></a>
 							<ul>
@@ -301,7 +312,7 @@
 
 							</ul></li>
 						 -->
-						<li><a href="#"><i class="icon-droplet2"></i> <span>Aprovações</span></a>
+						<%-- <li><a href="#"><i class="icon-droplet2"></i> <span>Aprovações</span></a>
 							<ul>
 								<li><a href="${raiz}solicitacoes/exame">Exames</a></li>
 								<li><a href="${raiz}solicitacoes/consulta">Consultas</a></li>
@@ -316,7 +327,7 @@
 							<ul>
 								<li><a href="${raiz}contas_receber">Contas a Receber</a></li>
 								<li><a href="${raiz}contas_pagar">Contas a Pagar</a></li>
-								<%-- <li><a href="${raiz}pagamentos">Pagamentos de Consultas</a></li>
+								<li><a href="${raiz}pagamentos">Pagamentos de Consultas</a></li>
 								<li><a href="${raiz}contratosAtivos">Contratos Ativos</a></li>
 								<li><a href="${raiz}baixascobranca">Baixa de Cobrança</a></li>
 								<li><a href="${raiz}cancelamentosbaixa">Cancelamento de
@@ -326,14 +337,14 @@
 								<li><a href="${raiz}cancelamentosguia">Cancelamento de
 										Guias</a></li>
 								<li><a href="${raiz}formaspagamentobalcao">Cop. via
-										Balcão</a></li> --%>
-							</ul></li>
+										Balcão</a></li>
+							</ul></li> --%>
 
 						<li><a href="#"><i class="icon-list-unordered"></i> <span>Relatórios</span></a>
-							<ul>							
+							<ul>
 								<li><a href="${raiz}relatorio/autorizacoes">Autorizações</a></li>
-								<li><a href="${raiz}relatorio/contas-pagar">Contas a Pagar</a></li>
-								<li><a href="${raiz}relatorio/contas-receber">Contas a Receber</a></li>
+								<%-- <li><a href="${raiz}relatorio/contas-pagar">Contas a Pagar</a></li>
+								<li><a href="${raiz}relatorio/contas-receber">Contas a Receber</a></li> --%>
 							</ul></li>
 					</ul>
 				</div>

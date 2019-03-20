@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import br.com.eclinic.entity.cliente.Cliente;
+import br.com.eclinic.entity.clienteLoja.ClienteLoja;
 import br.com.eclinic.entity.usuario.Funcionalidade;
 import br.com.eclinic.entity.usuario.Operacao;
 import br.com.eclinic.entity.usuario.Usuario;
@@ -206,4 +207,11 @@ public class UsuarioServiceImpl implements UsuarioService {
 		
 		return retorno;
 	}
+
+	@Override
+	public List<Usuario> consultar(Usuario usuario) {
+		return this.usuarioRepository.consultar(usuario);
+	}
+
+	
 }

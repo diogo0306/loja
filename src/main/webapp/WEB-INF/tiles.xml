@@ -590,6 +590,14 @@
 
 
 	<!-- USUARIO -->
+
+	<definition name="usuariosLoja" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/usuario/usuariosLoja.jsp" />
+		<put-attribute name="list" value="usuario.lista"
+			cascade="true" />
+	</definition>
+	
 	<definition name="usuarios" extends="baseLayout">
 		<put-attribute name="body"
 			value="/pages/usuario/usuarios.jsp" />
@@ -1177,36 +1185,42 @@
 		<put-attribute name="body"
 			value="/pages/fornecedor/fornecedor_incluir_form.jsp" />
 	</definition>
-	
+
 	<!-- RELATORIO -->
-	<definition name="relatorio-contas-pagar" extends="baseLayout">
+	<definition name="relatorio-contas-pagar"
+		extends="baseLayout">
 		<put-attribute name="body"
 			value="/pages/relatorio/relatorio_contas_pagar.jsp" />
 	</definition>
-	
-	<definition name="relatorio-contas-receber" extends="baseLayout">
+
+	<definition name="relatorio-contas-receber"
+		extends="baseLayout">
 		<put-attribute name="body"
 			value="/pages/relatorio/relatorio_contas_receber.jsp" />
 	</definition>
-	
-	<definition name="relatorio-autorizacoes" extends="baseLayout">
+
+	<definition name="relatorio-autorizacoes"
+		extends="baseLayout">
 		<put-attribute name="body"
 			value="/pages/relatorio/relatorio_autorizacoes.jsp" />
 	</definition>
-	
+
 	<!-- GUIA RELATORIOS -->
-	
-	<definition name="guia-relatorio-autorizacoes" extends="baseLayoutRelatorio">
+
+	<definition name="guia-relatorio-autorizacoes"
+		extends="baseLayoutRelatorio">
 		<put-attribute name="body"
 			value="/pages/relatorio/guia_relatorio_autorizacoes.jsp" />
 	</definition>
-	
-	<definition name="guia-relatorio-contas-pagar" extends="baseLayoutRelatorio">
+
+	<definition name="guia-relatorio-contas-pagar"
+		extends="baseLayoutRelatorio">
 		<put-attribute name="body"
 			value="/pages/relatorio/guia_relatorio_contas_pagar.jsp" />
 	</definition>
-	
-	<definition name="guia-relatorio-contas-receber" extends="baseLayoutRelatorio">
+
+	<definition name="guia-relatorio-contas-receber"
+		extends="baseLayoutRelatorio">
 		<put-attribute name="body"
 			value="/pages/relatorio/guia_relatorio_contas_receber.jsp" />
 	</definition>
@@ -1233,7 +1247,51 @@
 			value="/pages/produto/produto_form.jsp" cascade="true" />
 	</definition>
 
+	<definition name="produto_alterar" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/produto/produto_alterar.jsp" />
+		<put-attribute name="camposForm"
+			value="/pages/produto/produto_form.jsp" cascade="true" />
+	</definition>
 
+	<definition name="produto_visualizar" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/produto/produto_visualizar.jsp" />
+	</definition>
 
+	<!-- CLIENTE LOJA -->
+
+	<definition name="clientesLoja" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/clienteLoja/clientesLoja.jsp" />
+		<put-attribute name="list" value="clienteLoja.lista"
+			cascade="true" />
+	</definition>
+
+	<definition name="clienteLoja.lista"
+		template="/pages/clienteLoja/clienteLoja_lista.jsp">
+		<put-attribute name="paginacao"
+			value="/pages/paginacao.jsp" />
+	</definition>
+
+	<definition name="clienteLoja_incluir" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/clienteLoja/clienteLoja_incluir.jsp" />
+		<put-attribute name="camposForm"
+			value="/pages/clienteLoja/clienteLoja_form.jsp" cascade="true" />
+	</definition>
+
+	<definition name="clienteLoja_alterar" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/clienteLoja/clienteLoja_alterar.jsp" />
+		<put-attribute name="camposForm"
+			value="/pages/clienteLoja/clienteLoja_form.jsp" cascade="true" />
+	</definition>
+
+	<definition name="clienteLoja_visualizar"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/clienteLoja/clienteLoja_visualizar.jsp" />
+	</definition>
 
 </tiles-definitions> 

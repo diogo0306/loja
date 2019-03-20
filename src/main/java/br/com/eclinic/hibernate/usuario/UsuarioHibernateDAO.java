@@ -5,10 +5,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
+
+import org.apache.commons.lang.StringUtils;
 import org.hibernate.Criteria;
 import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
@@ -22,7 +25,7 @@ import br.com.eclinic.entity.usuario.TipoUsuarioEnum;
 import br.com.eclinic.entity.usuario.Usuario;
 import br.com.eclinic.hibernate.infra.SGPGenericDAO;
 
-@SuppressWarnings({"unchecked" })
+@SuppressWarnings({ "unchecked" })
 @Repository(value = "usuarioRepository")
 public class UsuarioHibernateDAO extends SGPGenericDAO<Usuario> implements UsuarioRepository {
 
@@ -295,7 +298,7 @@ public class UsuarioHibernateDAO extends SGPGenericDAO<Usuario> implements Usuar
 	}
 
 	// Métodos oauth
-	
+
 	@Override
 	public Usuario findByCpf(String cpf) {
 		Criteria criteria = createCriteria(Usuario.class);
@@ -318,4 +321,16 @@ public class UsuarioHibernateDAO extends SGPGenericDAO<Usuario> implements Usuar
 
 		return (Usuario) criteria.uniqueResult();
 	}
+
+	@Override
+	public List<Usuario> consultar(Usuario usuario) {
+		Criteria criteria = createCriteria(Usuario.class);
+		if (StringUtils.isNotBlank(usuario.getNome())) {
+			criteria.add(Restrictions.like("nome", usuario.getNome(), MatchMode.ANYWHERE).ignoreCase());
+		}
+
+		criteria.addOrder(Order.asc("nome"));
+		return Collections.checkedList((List<Usuario>) criteria.list(), Usuario.class);
+	}
+
 }

@@ -61,7 +61,7 @@ public class ProdutoController extends EclinicController {
 
 	@RequestMapping(value = URL_REQUEST_LISTA, method = RequestMethod.GET)
 	public String tecnicos(Locale locale, Model model, HttpServletRequest request) throws Exception {
-		model.addAttribute("produto", new Exame());
+		model.addAttribute("produto", new Produto());
 		return "produtos";
 	}
 
@@ -146,8 +146,8 @@ public class ProdutoController extends EclinicController {
 			produtoAlteracao
 					.setCodigoTipoProdutoTransiente(String.valueOf(produtoAlteracao.getTipoProdutoEnum().getCodigo()));
 
-			produtoAlteracao.setPrecoCustoTransiente(produtoAlteracao.getPrecoCustoTransiente().toString());
-			produtoAlteracao.setPrecoVendaTransiente(produtoAlteracao.getPrecoVendaTransiente().toString());
+			produtoAlteracao.setPrecoCustoTransiente(produtoAlteracao.getPrecoCusto().toString());
+			produtoAlteracao.setPrecoVendaTransiente(produtoAlteracao.getPrecoVenda().toString());
 
 			model.addAttribute(MODEL_ATTR_ENTIDADE, produtoAlteracao);
 			model.addAttribute("tipos", TipoProdutoEnum.values());
@@ -208,7 +208,7 @@ public class ProdutoController extends EclinicController {
 		if (produtoVisualizar != null) {
 
 			model.addAttribute(MODEL_ATTR_ENTIDADE, produtoVisualizar);
-			model.addAttribute("tipoPessoaContrato", TipoPessoaContratoEnum.values());
+			model.addAttribute("tipos", TipoProdutoEnum.values());
 
 			return "produto_visualizar";
 		} else {

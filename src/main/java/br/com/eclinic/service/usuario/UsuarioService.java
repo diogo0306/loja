@@ -3,6 +3,7 @@ package br.com.eclinic.service.usuario;
 import java.util.List;
 
 import br.com.eclinic.entity.cliente.Cliente;
+import br.com.eclinic.entity.clienteLoja.ClienteLoja;
 import br.com.eclinic.entity.usuario.Funcionalidade;
 import br.com.eclinic.entity.usuario.Operacao;
 import br.com.eclinic.entity.usuario.Usuario;
@@ -57,5 +58,7 @@ public interface UsuarioService {
 	// Métodos oauth
 	Usuario findByCpf(String cpf);
 	boolean existsUsersByCpf(String cpf);
+	
+	List<Usuario> consultar(Usuario usuario);
 
 }

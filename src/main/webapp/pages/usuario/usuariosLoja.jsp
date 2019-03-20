@@ -15,7 +15,7 @@
 					<div class="page-title">
 						<h4>
 							<i class="icon-arrow-left52 position-left"></i> <span
-								class="text-semibold">Gestão</span> - Índice Econômico
+								class="text-semibold">Gestão</span> - Usuários
 						</h4>
 					</div>
 				</div>
@@ -25,12 +25,11 @@
 						<li class="active"><i class="icon-home2 position-left"></i><a
 							href="${raiz}"> Home</a></li>
 						<li class="active">Gestão</li>
-						<li><a href="${raiz}indices"> Índice Econômico</a></li>
+						<li><a href="${raiz}usuariosLoja"> Usuários</a></li>
 
 					</ul>
 				</div>
 			</div>
-
 
 			<div class="content">
 
@@ -49,20 +48,10 @@
 					</div>
 				</c:if>
 
-				<c:if test="${empty indices}">
-					<div class="row">
-						<div class="alert alert-info-diogo">
-							<button type="button" class="close" data-dismiss="alert"
-								aria-hidden="true">×</button>
-							ATENÇÃO! Índice Econômico não cadastrada.
-						</div>
-					</div>
-				</c:if>
-
 				<div class="panel panel-flat">
 
 					<div class="panel-heading">
-						<h5 class="panel-title">Consultar Índices</h5>
+						<h5 class="panel-title">Consultar Usuários</h5>
 						<div class="heading-elements">
 							<ul class="icons-list">
 								<li><a data-action="collapse"></a></li>
@@ -75,23 +64,22 @@
 
 					<div class="panel-body">
 						<form:form method="POST" class="form-horizontal" role="form"
-							action="${raiz}indices" modelAttribute="indice">
+							action="${raiz}usuariosLoja" modelAttribute="usuario">
 
-							<div class="row">
+							<div class="form-group">
 								<div class="col-xs-1">
-									<label for="inputDescricao">Nome</label>
+									<label for="field_1">Nome</label>
 								</div>
-								<div class="col-xs-6">
-									<form:input required="true" type="text" class="form-control"
-										id="inputDescricao" placeholder="Digite o nome" path="nome" />
+								<div class="col-xs-5">
+									<form:input type="text" class="form-control" id="#"
+										placeholder="Digite o nome" path="nome" />
 								</div>
 							</div>
-							<br />
 							<div class="row">
 								<div class="col-xs-offset-1 col-xs-6">
 									<button type="submit" class="btn btn-success abrirJanela">Pesquisar</button>
-									&nbsp; <a href="${raiz}indice/salvar"
-										class="btn btn-primary abrirJanela">Incluir</a>
+									&nbsp; <a href="${raiz}usuario/salvar"
+										class="btn btn-primary abrirJanela">Cadastrar Usuário</a>
 								</div>
 							</div>
 						</form:form>
@@ -101,16 +89,19 @@
 						class="table table-striped table-bordered table-hover datatable-highlight">
 						<thead>
 							<tr>
-								<th width="5%">Competência</th>
-								<th width="80%">Nome</th>
-								<th width="7%" class="text-center">Ações</th>
+
+								<th width="40%">Nome</th>
+
+								<th class="text-center" width="10%">Ações</th>
 							</tr>
 						</thead>
 						<tbody>
-							<c:forEach var="indice" items="${indices}">
+
+							<c:forEach var="usuario" items="${usuarios}">
 								<tr>
-									<td><c:out value="${indice.competencia}" /></td>
-									<td><c:out value="${indice.nome}" /></td>
+
+									<td><c:out value="${usuario.nome}" /></td>
+
 									<td class="text-center">
 										<ul class="icons-list">
 											<li class="dropdown"><a href="#" class="dropdown-toggle"
@@ -119,16 +110,14 @@
 
 												<ul class="dropdown-menu dropdown-menu-right">
 
-													<li><a href="${raiz}indice/visualizar/${indice.id}"><i
-															class="glyphicon glyphicon-search"></i> Visualizar</a></li>
+													<li><a href="${raiz}produto/alterar/${produto.id}"><i
+															class="glyphicon glyphicon-search"></i> Alterar</a></li>
 
-													<li><a href="${raiz}indice/alterar/${indice.id}"><i
-															class="glyphicon glyphicon-pencil"></i> Alterar</a></li>
-
+													<li><a href="${raiz}produto/visualizar/${produto.id}"><i
+															class="glyphicon glyphicon-pencil"></i> Visualizar</a></li>
 												</ul></li>
 										</ul>
 									</td>
-
 								</tr>
 							</c:forEach>
 						</tbody>
@@ -138,3 +127,5 @@
 		</div>
 	</div>
 </div>
+
+

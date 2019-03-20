@@ -1,4 +1,3 @@
-
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -6,13 +5,13 @@
 
 <c:url value="/" var="raiz" />
 
+<!-- Begin page content -->
 <div class="page-container">
 	<div class="page-content">
 		<div class="content-wrapper">
 
 			<!-- Page header -->
 			<div class="page-header">
-
 
 				<c:if test="${messageError != null}">
 					<div class="row">
@@ -23,30 +22,31 @@
 				</c:if>
 
 
-				<div class="page-header-content">
-					<div class="page-title">
-						<h4>
-							<i class="icon-arrow-left52 position-left"></i> <span
-								class="text-semibold">Gestão</span> - Índice Econômico - Incluir
-						</h4>
-					</div>
-				</div>
+			</div>
 
-				<div class="breadcrumb-line">
-					<ul class="breadcrumb">
-						<li class="active"><i class="icon-home2 position-left"></i><a
-							href="${raiz}"> Home</a></li>
-						<li>Gestão</li>
-						<li><a href="${raiz}indices">Índice Econômico</a></li>
-						<li class="active">Incluir</li>
-
-					</ul>
+			<div class="page-header-content">
+				<div class="page-title">
+					<h4>
+						<i class="icon-arrow-left52 position-left"></i> <span
+							class="text-semibold">Gestão</span> - Clientes - Incluir
+					</h4>
 				</div>
 			</div>
 
+			<div class="breadcrumb-line">
+				<ul class="breadcrumb">
+					<li class="active"><i class="icon-home2 position-left"></i><a
+						href="${raiz}"> Home</a></li>
+					<li>Gestão</li>
+					<li><a href="${raiz}clientesLoja">Clientes</a></li>
+					<li class="active">Incluir</li>
+
+				</ul>
+			</div>
+
 			<form:form class="form-horizontal" role="form"
-				action="${raiz}indice/salvar" id="id-form" method="POST"
-				modelAttribute="indice">
+				action="${raiz}clienteLoja/salvar" id="id-form" method="POST"
+				modelAttribute="clienteLoja">
 				<tiles:insertAttribute name="camposForm" />
 			</form:form>
 		</div>

@@ -2,6 +2,7 @@ package br.com.eclinic.entity.produto;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.math.BigInteger;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -29,6 +30,7 @@ public class Produto implements Serializable {
 	private String precoCustoTransiente;
 	private BigDecimal precoVenda;
 	private String precoVendaTransiente;
+	private BigInteger estoque;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -114,4 +116,13 @@ public class Produto implements Serializable {
 		this.precoVendaTransiente = precoVendaTransiente;
 	}
 
+	@Column(name = "prod_estoque")
+	public BigInteger getEstoque() {
+		return estoque;
+	}
+
+	public void setEstoque(BigInteger estoque) {
+		this.estoque = estoque;
+	}
+	
 }

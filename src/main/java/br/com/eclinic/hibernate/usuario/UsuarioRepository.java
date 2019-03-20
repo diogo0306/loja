@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import br.com.eclinic.entity.cliente.Cliente;
+import br.com.eclinic.entity.produto.Produto;
 import br.com.eclinic.entity.usuario.Funcionalidade;
 import br.com.eclinic.entity.usuario.Operacao;
 import br.com.eclinic.entity.usuario.Usuario;
@@ -55,5 +56,7 @@ public interface UsuarioRepository {
 	// Métodos oauth
 	Usuario findByCpf(String cpf);
 	boolean existsUsersByCpf(String cpf);
+	
+	List<Usuario> consultar(Usuario usuario);
 
 }
