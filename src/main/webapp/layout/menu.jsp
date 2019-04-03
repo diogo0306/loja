@@ -6,7 +6,7 @@
 <!-- Main navbar -->
 <div class="navbar navbar-inverse">
 	<div class="navbar-header">
-		<a class="navbar-brand" href="index.html">São Gabriel</a>
+		<a class="navbar-brand" href="#">Loja</a>
 
 
 		<ul class="nav navbar-nav visible-xs-block">
@@ -267,8 +267,13 @@
 							</ul></li>
 						<li><a href="#"><i class="icon-stack2"></i> <span>Cadastros</span></a>
 							<ul>
+								<li><c:if
+										test="${usuario.tipoUsuarioLojaEnum.codigo == 1 }">
+										<a href="${raiz}usuarios">Usuários</a>
+									</c:if></li>
 
-								<li><a href="${raiz}usuariosLoja">Usuários</a></li>
+								<%-- 	<li><a href="${raiz}usuarios">Usuários</a></li> --%>
+
 								<li><a href="${raiz}produtos">Produtos</a></li>
 								<li><a href="${raiz}clientesLoja">Clientes</a></li>
 
@@ -342,7 +347,7 @@
 
 						<li><a href="#"><i class="icon-list-unordered"></i> <span>Relatórios</span></a>
 							<ul>
-								<li><a href="${raiz}relatorio/autorizacoes">Autorizações</a></li>
+								<li><a href="${raiz}relatorio/vendas">Vendas</a></li>
 								<%-- <li><a href="${raiz}relatorio/contas-pagar">Contas a Pagar</a></li>
 								<li><a href="${raiz}relatorio/contas-receber">Contas a Receber</a></li> --%>
 							</ul></li>

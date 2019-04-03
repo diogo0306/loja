@@ -1,4 +1,4 @@
-package br.com.eclinic.datasource;
+/*package br.com.eclinic.datasource;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -102,3 +102,4 @@ public class RelatorioPacienteDataSource extends
 	}
 
 }
+*/

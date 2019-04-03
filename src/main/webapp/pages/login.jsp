@@ -16,6 +16,16 @@
 		<div class="content-wrapper">
 			<!-- Content area -->
 			<div class="content">
+
+
+		 <%-- 		<c:if test="${MENSAGEM_LOGIN_INVALIDO == null}">
+					<div class="alert alert-info-diogo" style="text-align: center;">
+						<button type="button" class="close" data-dismiss="alert"
+							aria-hidden="true">×</button>
+						ATENÇÃO! Usuário e/ou senha inválido(s). Verifique se você digitou
+						corretametamente os campos ou entre em contato com o administrador
+					</div>
+				</c:if> --%>
 				<!-- Advanced login -->
 				<form:form method="POST" role="form" action="${urlForm}"
 					class="form-horizontal" modelAttribute="usuario" id="validate-form">
@@ -54,9 +64,9 @@
 									</label>
 								</div>
 
-								<div class="col-sm-6 text-right">
+								<!-- <div class="col-sm-6 text-right">
 									<a href="login_password_recover.html">Esqueceu a senha?</a>
-								</div>
+								</div> -->
 							</div>
 						</div>
 
@@ -71,8 +81,8 @@
 
 				<!-- Footer -->
 				<div class="footer text-muted">
-					&copy; 2018. <a href="#">Eclinic</a> by <a
-						href="http://www.comeia.org" target="_blank">Comeia</a>
+					&copy; 2018. <a href="#">Loja</a> by <a
+						href="http://www.comeia.org" target="_blank">Diogo</a>
 				</div>
 				<!-- /footer -->
 			</div>

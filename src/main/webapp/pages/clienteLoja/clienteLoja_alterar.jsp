@@ -66,7 +66,7 @@
 
 
 							<fieldset class="content-group">
-								<legend class="text-bold">Alterar Produto</legend>
+								<legend class="text-bold">Alterar Cliente</legend>
 
 								<div class="form-group">
 									<label class="control-label col-lg-2">Nome</label>

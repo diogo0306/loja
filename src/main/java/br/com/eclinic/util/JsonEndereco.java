@@ -2,18 +2,18 @@ package br.com.eclinic.util;
 
 import java.util.List;
 
-import br.com.eclinic.entity.endereco.Cidade;
-import br.com.eclinic.entity.endereco.Estado;
+/*import br.com.eclinic.entity.endereco.Cidade;
+import br.com.eclinic.entity.endereco.Estado;*/
 
 public class JsonEndereco {
 
 	private String cep;
 	private String rua;
 	private String bairro;
-	private Cidade cidade;
+	/*private Cidade cidade;
 	private Estado estado;
 	private List<Cidade> listaCidades;
-	private List<Estado> listaEstados;
+	private List<Estado> listaEstados;*/
 
 	public String getCep() {
 		return cep;
@@ -39,7 +39,7 @@ public class JsonEndereco {
 		this.bairro = bairro;
 	}
 
-	public Cidade getCidade() {
+/*	public Cidade getCidade() {
 		return cidade;
 	}
 
@@ -69,6 +69,6 @@ public class JsonEndereco {
 
 	public void setListaEstados(List<Estado> listaEstados) {
 		this.listaEstados = listaEstados;
-	}
+	}*/
 
 }

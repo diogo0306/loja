@@ -3,9 +3,9 @@ package br.com.eclinic.hibernate.cliente;
 import java.util.List;
 
 import br.com.eclinic.entity.cliente.Cliente;
-import br.com.eclinic.entity.endereco.Cidade;
+/*import br.com.eclinic.entity.endereco.Cidade;
 import br.com.eclinic.entity.endereco.Estado;
-import br.com.eclinic.entity.endereco.Pais;
+import br.com.eclinic.entity.endereco.Pais;*/
 import br.com.eclinic.util.JsonEndereco;
 
 public interface ClienteRepository {
@@ -29,36 +29,36 @@ public interface ClienteRepository {
 	/**
 	 * Método que lista todas as cidades por estado.
 	 */
-	List<Cidade> consultarCidadesPorEstado(String estado);
-
+/*	List<Cidade> consultarCidadesPorEstado(String estado);
+*/
 	/**
 	 * Método que lista todas as cidades por estado.
 	 */
-	List<Cidade> consultarCidadesPorEstado(Integer idEstado);
-
+/*	List<Cidade> consultarCidadesPorEstado(Integer idEstado);
+*/
 	/**
 	 * Método que lista todos os estados por país.
 	 */
-	List<Estado> consultarEstadosPorPais(Pais pais);
-
+/*	List<Estado> consultarEstadosPorPais(Pais pais);
+*/
 	/**
 	 * Método que lista todos os estados por país.
 	 */
-	List<Estado> consultarEstadosPorPais(Integer idPais);
-
+/*	List<Estado> consultarEstadosPorPais(Integer idPais);
+*/
 	/**
 	 * Método que consulta todos os paises.
 	 */
-	List<Pais> consultarPaises();
-	
-	Pais buscarPaisPorNome(String paisTransiente);
+/*	List<Pais> consultarPaises();
+*/	
+/*	Pais buscarPaisPorNome(String paisTransiente);
 
 	Estado buscarEstadoPorNome(String estadoTransiente);
 
 	Cidade buscarCidadePorNome(String cidadeTransiente, int idEstado);
 	
 	Cidade buscarCidadePorId(String cidadeTransiente, int id);
-	
+*/	
 	Cliente consultarCnpj (Cliente cliente);
 
 }

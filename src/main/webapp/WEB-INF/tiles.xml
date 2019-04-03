@@ -24,6 +24,17 @@
 		<put-attribute name="javascript"
 			value="/layout/javascript.jsp" />
 	</definition>
+	
+	<definition name="baseLayoutLoginLoja"
+		template="/layout/simpleLayoutLogin.jsp">
+		<put-attribute name="meta" value="/layout/meta.jsp" />
+		<put-attribute name="header" value="/layout/header.jsp" />
+		<put-attribute name="menu" value="/layout/menu.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/layout/footer.jsp" />
+		<put-attribute name="javascript"
+			value="/layout/javascript.jsp" />
+	</definition>
 
 	<definition name="404" extends="baseLayout">
 		<put-attribute name="body" value="/pages/404.jsp" />
@@ -38,6 +49,17 @@
 			value="/layout/javascript.jsp" />
 		<put-attribute name="body" value="/pages/login.jsp" />
 	</definition>
+	
+	<definition name="loginLoja" extends="baseLayoutLoginLoja">
+		<put-attribute name="meta" value="/layout/meta.jsp" />
+		<put-attribute name="header" value="/layout/header.jsp" />
+		<put-attribute name="menu" value="/layout/menuLogin.jsp" />
+		<put-attribute name="footer" value="/layout/footer.jsp" />
+		<put-attribute name="javascript"
+			value="/layout/javascript.jsp" />
+		<put-attribute name="body" value="/pages/loginLoja.jsp" />
+	</definition>
+	
 	<definition name="baseLayoutRelatorio"
 		template="/layout/simpleLayoutRelatorio.jsp">
 		<put-attribute name="meta" value="/layout/meta.jsp" />
@@ -597,7 +619,7 @@
 		<put-attribute name="list" value="usuario.lista"
 			cascade="true" />
 	</definition>
-	
+
 	<definition name="usuarios" extends="baseLayout">
 		<put-attribute name="body"
 			value="/pages/usuario/usuarios.jsp" />
@@ -1293,5 +1315,77 @@
 		<put-attribute name="body"
 			value="/pages/clienteLoja/clienteLoja_visualizar.jsp" />
 	</definition>
+	
+	<definition name="clienteLoja_dashboard"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/clienteLoja/clienteLoja_dashboard.jsp" />
+	</definition>
+
+	<!-- VENDA -->
+
+	<definition name="vendas" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/venda/vendas.jsp" />
+		<put-attribute name="list" value="vendas.lista"
+			cascade="true" />
+	</definition>
+
+	<definition name="vendas.lista"
+		template="/pages/venda/venda_lista.jsp">
+		<put-attribute name="paginacao"
+			value="/pages/paginacao.jsp" />
+	</definition>
+
+	<!-- RELATORIO -->
+
+	<definition name="relatorio-vendas" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/relatorio/relatorio_vendas.jsp" />
+	</definition>
+
+	<!-- GUIA RELATORIOS -->
+
+	<definition name="guia-relatorio-vendas"
+		extends="baseLayoutRelatorio">
+		<put-attribute name="body"
+			value="/pages/relatorio/guia_relatorio_vendas.jsp" />
+	</definition>
+
+	<!-- USUARIOLOJA -->
+
+	<definition name="usuariosLoja" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/usuarioLoja/usuariosLoja.jsp" />
+		<put-attribute name="list" value="usuarioLoja.lista"
+			cascade="true" />
+	</definition>
+
+	<definition name="usuarioLoja.lista"
+		template="/pages/usuarioLoja/usuarioLoja_lista.jsp">
+		<put-attribute name="paginacao"
+			value="/pages/paginacao.jsp" />
+	</definition>
+
+	<definition name="usuarioLoja_incluir" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/usuarioLoja/usuarioLoja_incluir.jsp" />
+		<put-attribute name="camposForm"
+			value="/pages/usuarioLoja/usuarioLoja_form.jsp" cascade="true" />
+	</definition>
+
+	<definition name="usuarioLoja_alterar" extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/usuarioLoja/usuarioLoja_alterar.jsp" />
+		<put-attribute name="camposForm"
+			value="/pages/usuarioLoja/usuarioLoja_form.jsp" cascade="true" />
+	</definition>
+
+	<definition name="usuarioLoja_visualizar"
+		extends="baseLayout">
+		<put-attribute name="body"
+			value="/pages/usuarioLoja/usuarioLoja_visualizar.jsp" />
+	</definition>
+
 
 </tiles-definitions> 

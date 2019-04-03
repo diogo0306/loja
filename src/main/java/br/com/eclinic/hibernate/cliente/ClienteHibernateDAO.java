@@ -1,4 +1,4 @@
-package br.com.eclinic.hibernate.cliente;
+/*package br.com.eclinic.hibernate.cliente;
 
 import java.util.Collections;
 import java.util.List;
@@ -24,10 +24,10 @@ import br.com.eclinic.util.JsonEndereco;
 @Repository(value = "clienteRepository")
 public class ClienteHibernateDAO extends SGPGenericDAO<Cliente> implements ClienteRepository{
 	
-	/**
+	*//**
 	 * Construtor padrão.
 	 * 
-	 */
+	 *//*
 	@Autowired
 	public ClienteHibernateDAO(
 			@Qualifier("sessionFactory") SessionFactory factory) {
@@ -71,12 +71,12 @@ public class ClienteHibernateDAO extends SGPGenericDAO<Cliente> implements Clien
 		return jsonEndereco;
 	}
 
-	/**
+	*//**
 	 * Consulta todas as cidades de um determinado estado.
 	 * 
 	 * @param siglaEstado
 	 *            o estado a ser usado no filtro.
-	 */
+	 *//*
 	public List<Cidade> consultarCidadesPorEstado(String siglaEstado) {
 		Criteria criteria = createCriteria(Cidade.class);
 		criteria.createAlias("estado", "e");
@@ -86,12 +86,12 @@ public class ClienteHibernateDAO extends SGPGenericDAO<Cliente> implements Clien
 				Cidade.class);
 	}
 	
-	/**
+	*//**
 	 * Consulta todas as cidades de um determinado estado.
 	 * 
 	 * @param siglaEstado
 	 *            o estado a ser usado no filtro.
-	 */
+	 *//*
 	public List<Cidade> consultarCidadesPorEstado(Integer idEstado) {
 		Criteria criteria = createCriteria(Cidade.class);
 		criteria.createAlias("estado", "e");
@@ -101,12 +101,12 @@ public class ClienteHibernateDAO extends SGPGenericDAO<Cliente> implements Clien
 				Cidade.class);
 	}
 	
-	/**
+	*//**
 	 * Consulta todos os estados por pais.
 	 * 
 	 * @param idPais
 	 *            o país a ser usado no filtro.
-	 */
+	 *//*
 	public List<Estado> consultarEstadosPorPais(Integer idPais) {
 		Criteria criteria = createCriteria(Estado.class);
 		criteria.add(Restrictions.eq("pais.id", idPais));
@@ -114,12 +114,12 @@ public class ClienteHibernateDAO extends SGPGenericDAO<Cliente> implements Clien
 				Estado.class);
 	}
 
-	/**
+	*//**
 	 * Consulta todos os estados por pais.
 	 * 
 	 * @param pais
 	 *            o país a ser usado no filtro.
-	 */
+	 *//*
 	public List<Estado> consultarEstadosPorPais(Pais pais) {
 		Criteria criteria = createCriteria(Estado.class);
 		criteria.add(Restrictions.eq("pais", pais));
@@ -127,10 +127,10 @@ public class ClienteHibernateDAO extends SGPGenericDAO<Cliente> implements Clien
 				Estado.class);
 	}
 
-	/**
+	*//**
 	 * Consulta todos os pa�ses.
 	 * 
-	 */
+	 *//*
 	public List<Pais> consultarPaises() {
 		Criteria criteria = createCriteria(Pais.class);
 		criteria.add(Restrictions.isNotNull("siglaPais"));
@@ -183,3 +183,4 @@ public class ClienteHibernateDAO extends SGPGenericDAO<Cliente> implements Clien
 
 
 }
+*/

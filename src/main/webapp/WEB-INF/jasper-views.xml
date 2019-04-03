@@ -10,7 +10,7 @@
 						http://www.springframework.org/schema/context 
 						http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-	<beans:bean id="pacienteReport"
+	<!-- <beans:bean id="pacienteReport"
 		class="org.springframework.web.servlet.view.jasperreports.JasperReportsMultiFormatView">
 		<beans:property name="url"
 			value="/resources/jasper/relatorio_paciente.jrxml" />
@@ -20,7 +20,7 @@
 		class="org.springframework.web.servlet.view.jasperreports.JasperReportsMultiFormatView">
 		<beans:property name="url"
 			value="/resources/jasper/relatorio_receita.jrxml" />
-	</beans:bean>
+	</beans:bean> -->
 
 
 </beans>

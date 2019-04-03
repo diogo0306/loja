@@ -24,9 +24,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.com.eclinic.controler.EclinicController;
 
-import br.com.eclinic.entity.contrato.TipoPessoaContratoEnum;
 
-import br.com.eclinic.entity.exame.Exame;
 
 import br.com.eclinic.entity.produto.Produto;
 import br.com.eclinic.entity.produto.TipoProdutoEnum;

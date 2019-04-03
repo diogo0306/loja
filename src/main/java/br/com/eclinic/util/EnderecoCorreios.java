@@ -11,10 +11,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-
+/*
 import br.com.eclinic.entity.endereco.Cidade;
 import br.com.eclinic.entity.endereco.Estado;
-import br.com.eclinic.entity.endereco.Pais;
+import br.com.eclinic.entity.endereco.Pais;*/
 
 @Entity
 @Table(name = "end_endereco")
@@ -29,10 +29,10 @@ public class EnderecoCorreios implements Serializable {
 	private String cep;
 	private String logradouro;
 	private String bairro;
-	private Pais pais;
+	/*private Pais pais;
 	private Estado estado;
 	private Cidade cidade;
-
+*/
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "end_id", nullable = false)
@@ -62,7 +62,7 @@ public class EnderecoCorreios implements Serializable {
 		this.bairro = bairro;
 	}
 
-	@OneToOne
+/*	@OneToOne
 	@JoinColumn(name = "end_pais")
 	public Pais getPais() {
 		return pais;
@@ -90,7 +90,7 @@ public class EnderecoCorreios implements Serializable {
 
 	public void setCidade(Cidade cidade) {
 		this.cidade = cidade;
-	}
+	}*/
 
 	@Column(name = "end_logradouro", nullable = true)
 	public String getLogradouro() {

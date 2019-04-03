@@ -21,80 +21,12 @@
 				action="${raiz}clienteLoja/salvar" id="id-form" method="POST"
 				modelAttribute="clienteLoja">
 				<fieldset class="content-group">
-					<legend class="text-bold">Cadastrar Cliente</legend>
+					<legend class="text-bold">Dashboard do Cliente</legend>
 
-					<div class="form-group">
-						<label class="control-label col-lg-2">Nome</label>
-						<div class="col-lg-4">
-							<div class="input-group col-xs-12">
 
-								<form:input type="text" class="form-control" required="true"
-									id="#" placeholder="Digite o nome" path="nome"
-									cssErrorClass="field_error form-control" />
-								<form:errors path="nome" cssClass="text-danger"
-									class="has-error" />
-
-							</div>
-						</div>
-					</div>
-
-					<div class="form-group">
-						<label class="control-label col-lg-2">Código</label>
-						<div class="col-lg-4">
-							<div class="input-group col-xs-5">
-								<form:input type="text" class="form-control" required="true"
-									id="#" placeholder="Digite o código" path="codigo"
-									cssErrorClass="field_error form-control" />
-								<form:errors path="codigo" cssClass="text-danger"
-									class="has-error" />
-							</div>
-						</div>
-
-					</div>
-
-					<div class="form-group">
-						<label class="control-label col-lg-2">CPF</label>
-						<div class="col-lg-4">
-							<div class="input-group col-xs-5">
-								<form:input type="text" class="form-control" required="true"
-									id="inputCpf" placeholder="Digite o cpf" path="cpf"
-									cssErrorClass="field_error form-control" />
-								<form:errors path="cpf" cssClass="text-danger" class="has-error" />
-							</div>
-						</div>
-
-					</div>
-
-					<div class="form-group">
-						<label class="control-label col-lg-2">Celular</label>
-						<div class="col-lg-4">
-							<div class="input-group col-xs-5">
-								<form:input type="text" class="form-control" required="true"
-									id="inputCelular" placeholder="Digite o celular" path="celular"
-									cssErrorClass="field_error form-control" />
-								<form:errors path="celular" cssClass="text-danger"
-									class="has-error" />
-							</div>
-						</div>
-
-					</div>
-
-					<div class="form-group">
-						<label class="control-label col-lg-2">E-mail</label>
-						<div class="col-lg-4">
-							<div class="input-group col-xs-12">
-								<form:input type="text" class="form-control" required="true"
-									id="#" placeholder="Digite o e-mail" path="email"
-									cssErrorClass="field_error form-control" />
-								<form:errors path="email" cssClass="text-danger"
-									class="has-error" />
-							</div>
-						</div>
-
-					</div>
 
 					<div class="text-right">
-						<a href="${raiz}produtos" class=" btn bg-danger abrirJanela">Cancelar</a>
+						<a href="${raiz}clientesLoja" class=" btn bg-danger abrirJanela">Cancelar</a>
 
 						<button type="submit" class="btn btn-primary">
 							Salvar <i class="icon-arrow-right14 position-right"></i>

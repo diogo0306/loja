@@ -47,6 +47,15 @@
 								aria-hidden="true">&times;</button>${message}</div>
 					</div>
 				</c:if>
+				
+				<c:if test="${empty produtos}">
+					<div class="alert alert-info-diogo">
+						<button type="button" class="close" data-dismiss="alert"
+							aria-hidden="true">×</button>
+						ATENÇÃO! Clique em "Pesquisar" para gerar a lista de Produtos.
+						Caso a lista não seja gerada, clique em "Cadastrar Produto"!
+					</div>
+				</c:if>
 
 				<div class="panel panel-flat">
 

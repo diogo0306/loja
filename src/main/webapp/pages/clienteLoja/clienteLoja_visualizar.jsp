@@ -63,7 +63,7 @@
 							modelAttribute="clienteLoja">
 							<fieldset class="content-group">
 								
-								<legend class="text-bold">Visualizar Produto</legend>
+								<legend class="text-bold">Visualizar Dados do Cliente</legend>
 
 								<div class="form-group">
 									<label class="control-label col-lg-2">Nome</label>

@@ -13,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import br.com.eclinic.entity.cliente.Cliente;
 
-@SuppressWarnings({"unchecked"})
+@SuppressWarnings({ "unchecked" })
 public class SGPGenericDAO<T extends Serializable> extends HibernateDaoSupport {
 
 	private static final String CLIENTE_ID = "cliente.id";
@@ -22,8 +22,7 @@ public class SGPGenericDAO<T extends Serializable> extends HibernateDaoSupport {
 	/**
 	 * Construtor, recebe a classe persistente que utilizar� o DAO.
 	 * 
-	 * @param classePersistente
-	 *            O tipo a ser persistido.
+	 * @param classePersistente O tipo a ser persistido.
 	 */
 	@Autowired
 	public SGPGenericDAO(Class<T> classePersistente) {
@@ -34,20 +33,17 @@ public class SGPGenericDAO<T extends Serializable> extends HibernateDaoSupport {
 	/**
 	 * Recupera da base de dados um determinado objeto pelo id.
 	 * 
-	 * @param id
-	 *            O id do objeto para buscar
+	 * @param id O id do objeto para buscar
 	 * @return O objeto carregado atrav�s do id
 	 */
 	public T buscar(Long id) {
-		return classePersistente.cast(getHibernateTemplate().get(
-				getClassePersistente(), id));
+		return classePersistente.cast(getHibernateTemplate().get(getClassePersistente(), id));
 	}
 
 	/**
 	 * Método que cria uma crit�ria baseado na classe informada.
 	 * 
-	 * @param classe
-	 *            classe para a crit�ria.
+	 * @param classe classe para a crit�ria.
 	 */
 	protected Criteria createCriteria(Class<?> classe) {
 		SessionFactory sessionFactory = getSessionFactory();
@@ -61,8 +57,7 @@ public class SGPGenericDAO<T extends Serializable> extends HibernateDaoSupport {
 	 */
 	protected Criteria createCriteria() {
 		SessionFactory sessionFactory = getSessionFactory();
-		Criteria criteria = sessionFactory.openSession().createCriteria(
-				getClassePersistente());
+		Criteria criteria = sessionFactory.openSession().createCriteria(getClassePersistente());
 		return criteria;
 	}
 
@@ -74,7 +69,7 @@ public class SGPGenericDAO<T extends Serializable> extends HibernateDaoSupport {
 	public List<T> listar() {
 		return (List<T>) getHibernateTemplate().loadAll(classePersistente);
 	}
-	
+
 	/**
 	 * Lista todas as entidades de uma determinada classe no banco de dados.
 	 * 
@@ -83,27 +78,23 @@ public class SGPGenericDAO<T extends Serializable> extends HibernateDaoSupport {
 	public List<T> listarPorCliente(Cliente cliente) {
 		Criteria criteria = createCriteria(getClassePersistente());
 		criteria.add(Restrictions.eq(CLIENTE_ID, cliente.getId()));
-		return Collections.checkedList((List<T>) criteria.list(),
-				getClassePersistente());
+		return Collections.checkedList((List<T>) criteria.list(), getClassePersistente());
 	}
 
 	/**
 	 * Salva o objeto no banco de dados.
 	 * 
-	 *@param obj
-	 *            o objeto a ser salvo.
+	 * @param obj o objeto a ser salvo.
 	 */
 	@Transactional
 	public void salvar(T obj) {
 		getHibernateTemplate().save(obj);
 	}
-	
 
 	/**
 	 * Atualiza um determinado objeto na base de dados.
 	 * 
-	 * @param obj
-	 *            A inst�ncia do objeto para atualizar
+	 * @param obj A inst�ncia do objeto para atualizar
 	 */
 	@Transactional
 	public void alterar(T obj) {
@@ -113,8 +104,7 @@ public class SGPGenericDAO<T extends Serializable> extends HibernateDaoSupport {
 	/**
 	 * Salva ou atualiza um determinado objeto na base de dados.
 	 * 
-	 * @param obj
-	 *            A inst�ncia do objeto para atualizar
+	 * @param obj A inst�ncia do objeto para atualizar
 	 */
 	@Transactional
 	public void saveOrUpdate(T obj) {
@@ -124,8 +114,7 @@ public class SGPGenericDAO<T extends Serializable> extends HibernateDaoSupport {
 	/**
 	 * Exclui um determinado objeto na base de dados.
 	 * 
-	 * @param obj
-	 *            A inst�ncia do objeto para excluir
+	 * @param obj A inst�ncia do objeto para excluir
 	 */
 	@Transactional
 	public void excluir(T obj) {
@@ -135,8 +124,7 @@ public class SGPGenericDAO<T extends Serializable> extends HibernateDaoSupport {
 	/**
 	 * Obtém a classe persistente.
 	 * 
-	 * @param classePersistente
-	 *            O tipo a ser persistido.
+	 * @param classePersistente O tipo a ser persistido.
 	 */
 	public Class<T> getClassePersistente() {
 		return classePersistente;

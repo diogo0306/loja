@@ -27,6 +27,6 @@ public class UsuarioValidator implements Validator {
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "rg", "informar.campo.obrigatorio");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "telefone", "informar.campo.obrigatorio");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "nome", "informar.campo.obrigatorio");
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "perfil.id", "informar.campo.obrigatorio");
+		/*ValidationUtils.rejectIfEmptyOrWhitespace(errors, "perfil.id", "informar.campo.obrigatorio");*/
 	}
 }

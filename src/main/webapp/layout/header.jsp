@@ -1,6 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<title>Clínica Fácil - Gestão de Clínicas e Consultórios</title>
+<title>Loja Diogo - Gestão de Lojas</title>
 
 
 <link

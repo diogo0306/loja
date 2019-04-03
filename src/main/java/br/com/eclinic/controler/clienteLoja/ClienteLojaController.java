@@ -33,6 +33,7 @@ public class ClienteLojaController extends EclinicController {
 	private static final String URL_REQUEST_SALVAR = "/clienteLoja/salvar";
 	private static final String URL_REQUEST_ALTERAR = "/clienteLoja/alterar";
 	private static final String URL_REQUEST_VISUALIZAR = "/clienteLoja/visualizar";
+	private static final String URL_REQUEST_DASHBOARD = "/clienteLoja/dashboard";
 	private static final String URL_REQUEST_EXCLUIR = "/clienteLoja/excluir";
 
 	@Autowired
@@ -142,6 +143,23 @@ public class ClienteLojaController extends EclinicController {
 			return "redirect:../clientesLoja";
 		}
 	}
+	
+	@RequestMapping(value = URL_REQUEST_DASHBOARD + "/{pk}", method = RequestMethod.GET)
+	public String exibirDashboard(@PathVariable Long pk, Model model) throws Exception {
+
+		ClienteLoja clienteLojaDashboard = clienteLojaService.buscar(pk);
+
+		if (clienteLojaDashboard != null) {
+
+			model.addAttribute(MODEL_ATTR_ENTIDADE, clienteLojaDashboard);
+
+			return "clienteLoja_dashboard";
+		} else {
+			return "redirect:../clientesLoja";
+		}
+	}
+
+	
 
 	@RequestMapping(value = URL_REQUEST_EXCLUIR, method = RequestMethod.POST)
 	public String excluir(@ModelAttribute ClienteLoja clienteLoja, Model model,

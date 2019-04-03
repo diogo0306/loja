@@ -5,7 +5,7 @@
 <div id="footer" style="text-align: center;">
 	<div class="container">
 		<p class="text-muted">
-			eClinic - Gestão de Clínicas e Consultórios <span> <a
+			Loja Diogo <span> <a
 				href="http://www.clinicafacil.online" target="blank"> All Rights
 					Reserved</a>
 			</span>

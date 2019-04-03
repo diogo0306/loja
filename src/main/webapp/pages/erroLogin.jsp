@@ -7,7 +7,7 @@
 <!-- Begin page content -->
 <div class="container">
 	<div class="page-header">
-		<h1>Enertec</h1>
+		<h1>Diogo</h1>
 	</div>
 
 

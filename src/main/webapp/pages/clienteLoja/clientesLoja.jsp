@@ -48,6 +48,15 @@
 					</div>
 				</c:if>
 
+				<c:if test="${empty clientesLoja}">
+					<div class="alert alert-info-diogo">
+						<button type="button" class="close" data-dismiss="alert"
+							aria-hidden="true">×</button>
+						ATENÇÃO! Clique em "Pesquisar" para gerar a lista de Clientes.
+						Caso a lista não seja gerada, clique em "Cadastrar Cliente"!
+					</div>
+				</c:if>
+
 				<div class="panel panel-flat">
 
 					<div class="panel-heading">
@@ -119,11 +128,14 @@
 
 													<li><a
 														href="${raiz}clienteLoja/alterar/${clienteLoja.id}"><i
-															class="glyphicon glyphicon-search"></i> Alterar</a></li>
+															class="glyphicon glyphicon-pencil"></i> Alterar</a></li>
 
 													<li><a
 														href="${raiz}clienteLoja/visualizar/${clienteLoja.id}"><i
-															class="glyphicon glyphicon-pencil"></i> Visualizar</a></li>
+															class="glyphicon glyphicon-search"></i> Visualizar</a></li>
+													<li><a
+														href="${raiz}clienteLoja/dashboard/${clienteLoja.id}"><i
+															class="glyphicon glyphicon-picture"></i> Dashboard</a></li>
 												</ul></li>
 										</ul>
 									</td>

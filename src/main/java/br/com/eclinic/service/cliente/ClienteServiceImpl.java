@@ -1,4 +1,4 @@
-package br.com.eclinic.service.cliente;
+/*package br.com.eclinic.service.cliente;
 
 import java.util.List;
 
@@ -73,50 +73,50 @@ public class ClienteServiceImpl implements ClienteService{
 		return clienteRepository.consultarEnderecoPorCep(cep);
 	}
 
-	/**
+	*//**
 	 * Consulta todas as cidades por estado.
 	 * 
 	 * @param siglaEstado
 	 *            o estado a ser usado como filtro.
-	 */
+	 *//*
 	public List<Cidade> consultarCidadesPorEstado(String siglaEstado) {
 		return this.clienteRepository.consultarCidadesPorEstado(siglaEstado);
 	}
 	
-	/**
+	*//**
 	 * Consulta todas as cidades por estado.
 	 * 
 	 * @param idEstado
 	 *            o estado a ser usado como filtro.
-	 */
+	 *//*
 	public List<Cidade> consultarCidadesPorEstado(Integer idEstado) {
 		return this.clienteRepository.consultarCidadesPorEstado(idEstado);
 	}
 
-	/**
+	*//**
 	 * Consulta todos os estados por país.
 	 * 
 	 * @param pais
 	 *            o país usado como filtro.
-	 */
+	 *//*
 	public List<Estado> consultarEstadosPorPais(Pais pais) {
 		return this.clienteRepository.consultarEstadosPorPais(pais);
 	}
 	
-	/**
+	*//**
 	 * Consulta todos os estados por país.
 	 * 
 	 * @param pais
 	 *            o país usado como filtro.
-	 */
+	 *//*
 	public List<Estado> consultarEstadosPorPais(Integer idPais) {
 		return this.clienteRepository.consultarEstadosPorPais(idPais);
 	}
 
-	/**
+	*//**
 	 * Consulta todos países no banco de dados.
 	 * 
-	 */
+	 *//*
 	public List<Pais> consultarPaises() {
 		return this.clienteRepository.consultarPaises();
 	}
@@ -148,3 +148,4 @@ public class ClienteServiceImpl implements ClienteService{
 	}
 
 }
+*/

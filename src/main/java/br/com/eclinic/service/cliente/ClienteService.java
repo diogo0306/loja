@@ -1,4 +1,4 @@
-package br.com.eclinic.service.cliente;
+/*package br.com.eclinic.service.cliente;
 
 import java.util.List;
 
@@ -46,3 +46,4 @@ public interface ClienteService {
 	Cliente consultarCnpj (Cliente cliente);
 
 }
+*/

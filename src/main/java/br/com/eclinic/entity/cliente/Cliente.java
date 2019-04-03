@@ -20,12 +20,12 @@ import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 
-import br.com.eclinic.entity.agendamento.Agendamento;
-import br.com.eclinic.entity.empresa.Empresa;
+/*import br.com.eclinic.entity.agendamento.Agendamento;
+*//*import br.com.eclinic.entity.empresa.Empresa;
 import br.com.eclinic.entity.exame.Exame;
 import br.com.eclinic.entity.exame.Tabela;
 import br.com.eclinic.entity.medico.Medico;
-import br.com.eclinic.entity.paciente.Paciente;
+import br.com.eclinic.entity.paciente.Paciente;*/
 import br.com.eclinic.entity.usuario.Perfil;
 import br.com.eclinic.entity.usuario.Usuario;
 
@@ -44,11 +44,9 @@ public class Cliente implements Serializable {
 	private String cnaeDescricao;
 	private List<Perfil> perfis;
 	private List<Usuario> usuarios;
-	private List<Paciente> pacientes;
-	private List<Medico> medicos;
-	private List<Agendamento> agendamentos;
-	private List<Exame> exames;
-	private List<Empresa> empresa;
+
+/*	private List<Agendamento> agendamentos;
+*/	
 
 	private String bairro;
 	private String logradouro;
@@ -63,7 +61,6 @@ public class Cliente implements Serializable {
 	private String pais;
 	private String estado;
 	private String cidade;
-	private Tabela tabela;
 
 	public Cliente() {
 		super();
@@ -128,7 +125,7 @@ public class Cliente implements Serializable {
 		this.perfis = perfis;
 	}
 
-	@OneToMany(mappedBy = "cliente")
+	/*@OneToMany(mappedBy = "cliente")
 	@LazyCollection(LazyCollectionOption.TRUE)
 	@Cascade(value = { org.hibernate.annotations.CascadeType.REMOVE, org.hibernate.annotations.CascadeType.ALL,
 			org.hibernate.annotations.CascadeType.SAVE_UPDATE })
@@ -139,8 +136,8 @@ public class Cliente implements Serializable {
 	public void setPacientes(List<Paciente> pacientes) {
 		this.pacientes = pacientes;
 	}
-
-	@OneToMany(mappedBy = "cliente")
+*/
+	/*@OneToMany(mappedBy = "cliente")
 	@LazyCollection(LazyCollectionOption.TRUE)
 	@Cascade(value = { org.hibernate.annotations.CascadeType.REMOVE, org.hibernate.annotations.CascadeType.ALL,
 			org.hibernate.annotations.CascadeType.SAVE_UPDATE })
@@ -151,7 +148,7 @@ public class Cliente implements Serializable {
 	public void setMedicos(List<Medico> medicos) {
 		this.medicos = medicos;
 	}
-
+*/
 	@Column(name = "cli_bairro")
 	public String getBairro() {
 		return bairro;
@@ -242,7 +239,7 @@ public class Cliente implements Serializable {
 		this.cidade = cidade;
 	}
 
-	@OneToMany(mappedBy = "cliente")
+	/*@OneToMany(mappedBy = "cliente")
 	@LazyCollection(LazyCollectionOption.TRUE)
 	@Cascade(value = { org.hibernate.annotations.CascadeType.REMOVE, org.hibernate.annotations.CascadeType.ALL,
 			org.hibernate.annotations.CascadeType.SAVE_UPDATE })
@@ -253,8 +250,8 @@ public class Cliente implements Serializable {
 	public void setAgendamentos(List<Agendamento> agendamentos) {
 		this.agendamentos = agendamentos;
 	}
-
-	@OneToMany(mappedBy = "cliente")
+*/
+	/*@OneToMany(mappedBy = "cliente")
 	@LazyCollection(LazyCollectionOption.TRUE)
 	@Cascade(value = { org.hibernate.annotations.CascadeType.REMOVE, org.hibernate.annotations.CascadeType.ALL,
 			org.hibernate.annotations.CascadeType.SAVE_UPDATE })
@@ -274,7 +271,7 @@ public class Cliente implements Serializable {
 	public void setEmpresa(List<Empresa> empresa) {
 		this.empresa = empresa;
 	}
-
+*/
 	@Column(name = "cli_cnae")
 	public String getCnae() {
 		return cnae;
@@ -311,7 +308,7 @@ public class Cliente implements Serializable {
 		this.celularSecundario = celularSecundario;
 	}
 
-	@OneToOne(fetch = FetchType.LAZY)
+	/*@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "tab_id", nullable = true)
 	public Tabela getTabela() {
 		return tabela;
@@ -320,5 +317,5 @@ public class Cliente implements Serializable {
 	public void setTabela(Tabela tabela) {
 		this.tabela = tabela;
 	}
-
+*/
 }

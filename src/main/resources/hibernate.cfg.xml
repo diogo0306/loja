@@ -2,77 +2,26 @@
 <!DOCTYPE hibernate-configuration PUBLIC
     "-//Hibernate/Hibernate Configuration DTD//EN"
     "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
- 
-<hibernate-configuration> 
-    <session-factory>
-    
-    	<mapping class="br.com.eclinic.entity.usuario.Operacao" />
+
+<hibernate-configuration>
+	<session-factory>
+
+		<mapping class="br.com.eclinic.entity.usuario.Operacao" />
 		<mapping class="br.com.eclinic.entity.usuario.Funcionalidade" />
 		<mapping class="br.com.eclinic.entity.usuario.Perfil" />
-		<mapping class="br.com.eclinic.saogabriel.api.entity.consultorio.Consultorio" />
-		
-		<mapping class="br.com.eclinic.entity.endereco.Cidade" />
-		<mapping class="br.com.eclinic.entity.endereco.Estado" />
-		<mapping class="br.com.eclinic.entity.endereco.Pais" />
-		<mapping class="br.com.eclinic.entity.endereco.Endereco" />
-    
+
+
 		<mapping class="br.com.eclinic.entity.usuario.Usuario" />
 		<mapping class="br.com.eclinic.entity.cliente.Cliente" />
-		
-		<mapping class="br.com.eclinic.entity.empresa.Empresa" />
-		<mapping class="br.com.eclinic.entity.plano.Plano" />
-		<mapping class="br.com.eclinic.entity.medico.Medico" />
-		<mapping class="br.com.eclinic.entity.paciente.Paciente" />
-		<mapping class="br.com.eclinic.entity.exame.Exame" />
-		<mapping class="br.com.eclinic.entity.exame.Tabela" />
-		<mapping class="br.com.eclinic.entity.exame.TabelaExame" />
-		<mapping class="br.com.eclinic.entity.consulta.Consulta" />
-		<mapping class="br.com.eclinic.entity.agendamento.Agendamento" />
-		<mapping class="br.com.eclinic.entity.receita.Receita" />
-		<mapping class="br.com.eclinic.entity.receita.Medicamento" />
-		<mapping class="br.com.eclinic.entity.solicitacao.Solicitacao" />
-		<mapping class="br.com.eclinic.entity.solicitacao.SolicitacaoExame" />
-		<mapping class="br.com.eclinic.entity.representante.Representante" />
-		<mapping class="br.com.eclinic.entity.supervisor.Responsavel" />
-		<mapping class="br.com.eclinic.entity.supervisor.Supervisor" />
-		<mapping class="br.com.eclinic.entity.dependente.Dependente" />
-		<mapping class="br.com.eclinic.entity.agenda.Agenda" />
-		<mapping class="br.com.eclinic.entity.jornada.Jornada" />
-	 	<mapping class="br.com.eclinic.entity.evento.Evento" />
-	 	<mapping class="br.com.eclinic.entity.parametrizacao.Parametrizacao" />
-	 	<mapping class="br.com.eclinic.entity.parametrizacao.Mensagem" />
-	 	<mapping class="br.com.eclinic.entity.parametrizacao.Dia" />
-	 	<mapping class="br.com.eclinic.entity.credenciado.Credenciado" />
-	 	<mapping class="br.com.eclinic.entity.motivo.Motivo" />
-	 	<mapping class="br.com.eclinic.entity.contrato.Contrato" />
-	 	<mapping class="br.com.eclinic.entity.cartao.Cartao" />
-	 	<mapping class="br.com.eclinic.entity.tabela.TabelaPrecoPlano" />
-	 	<mapping class="br.com.eclinic.entity.tabela.TabelaFaixa" />
-	 	<mapping class="br.com.eclinic.entity.tabela.FaixaEtaria" />
-	 	<mapping class="br.com.eclinic.entity.acomodacao.Acomodacao" />
-	 	<mapping class="br.com.eclinic.entity.procedimento.GrupoProcedimento" />
-	 	<mapping class="br.com.eclinic.entity.procedimento.Procedimento" />
-	 	<mapping class="br.com.eclinic.entity.documentacao.Documentacao" />
-	 	<mapping class="br.com.eclinic.entity.solicitacao.SolicitacaoConsulta" />
-	 	<mapping class="br.com.eclinic.entity.especialidade.Especialidade" />
-	 	<mapping class="br.com.eclinic.entity.procedimento.RelacaoGrupoProcedimento" />
-	 	<mapping class="br.com.eclinic.entity.paciente.Cobranca" />
-	 	<mapping class="br.com.eclinic.entity.paciente.CobrancaAvulsa" />
-	 	<mapping class="br.com.eclinic.entity.exame.BeneficiarioExame" />
-	 	<mapping class="br.com.eclinic.entity.contrato.CobrancaContrato" />
-	 	<mapping class="br.com.eclinic.entity.contas.ContasReceber" />
-	 	<mapping class="br.com.eclinic.entity.contas.ContasPagar" />
-	 	<mapping class="br.com.eclinic.entity.autorizacao.Autorizacao" />
-	 	<mapping class="br.com.eclinic.entity.hospital.Hospital" />
-	 	<mapping class="br.com.eclinic.entity.fornecedor.Fornecedor" />
-	 	<mapping class="br.com.eclinic.entity.caixa.Caixa" />
-	 	<mapping class="br.com.eclinic.entity.produto.Produto" />
-	 	<mapping class="br.com.eclinic.entity.clienteLoja.ClienteLoja" />
-	 	
-	 	
-	 	<!-- API -->
-	 	<mapping class="br.com.eclinic.saogabriel.api.entity.consultorio.Consultorio" />
-		
-    </session-factory>
-         
+
+		<mapping class="br.com.eclinic.entity.produto.Produto" />
+		<mapping class="br.com.eclinic.entity.clienteLoja.ClienteLoja" />
+		<mapping class="br.com.eclinic.entity.venda.Venda" />
+		<mapping class="br.com.eclinic.entity.usuarioLoja.UsuarioLoja" />
+
+
+
+
+	</session-factory>
+
 </hibernate-configuration>
