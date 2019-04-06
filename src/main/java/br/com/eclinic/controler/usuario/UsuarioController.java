@@ -1,5 +1,6 @@
 package br.com.eclinic.controler.usuario;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -55,9 +56,10 @@ public class UsuarioController extends EclinicController {
 	private UsuarioService service;
 	@Autowired
 	private PerfilService perfilService;
-/*	@Autowired
-	private ClienteService clienteService;
-*/
+
+	/*
+	 * @Autowired private ClienteService clienteService;
+	 */
 	@RequestMapping(value = URL_REQUEST_LISTA, method = RequestMethod.POST)
 	public String usuarioPesquisar(@ModelAttribute Usuario usuario, Locale locale, Model model,
 			HttpServletRequest request) throws Exception {
@@ -71,8 +73,6 @@ public class UsuarioController extends EclinicController {
 
 	@RequestMapping(value = URL_REQUEST_LISTA, method = RequestMethod.GET)
 	public String usuarios(Locale locale, Model model, HttpServletRequest request) throws Exception {
-
-		
 
 		/*
 		 * Usuario usuarioLogado = new Usuario();
@@ -129,16 +129,9 @@ public class UsuarioController extends EclinicController {
 
 		model.addAttribute(MODEL_ATTR_ENTIDADE, new Usuario());
 		model.addAttribute("usuario", new UsuarioDTO());// Modificado
-		model.addAttribute("tipos", TipoUsuarioLojaEnum.values());
+		/* model.addAttribute("tipos", TipoUsuarioLojaEnum.values()); */
 		model.addAttribute("tipo", TipoUsuarioEnum.values());
 
-		/*
-		 * model.addAttribute("perfis",
-		 * perfilService.listarPorCliente(usuarioLogado.getCliente()));
-		 */
-		/*
-		 * model.addAttribute("funcionalidades", perfilService.listarFuncionalidades());
-		 */
 		return "usuario_incluir";
 	}
 
@@ -155,15 +148,17 @@ public class UsuarioController extends EclinicController {
 
 		ModelAndView modelAndView = new ModelAndView("usuario_incluir");
 		modelAndView.addObject(MODEL_ATTR_ENTIDADE, usuario);
-		modelAndView.addObject("tipos", TipoUsuarioLojaEnum.values());
+		/* modelAndView.addObject("tipos", TipoUsuarioLojaEnum.values()); */
 		modelAndView.addObject("tipo", TipoUsuarioEnum.values());
 
-		if (usuario.getCodigoTipoUsuarioLojaTransiente() != null
-				&& usuario.getCodigoTipoUsuarioLojaTransiente() != vazio) {
-
-			usuario.setTipoUsuarioLojaEnum(TipoUsuarioLojaEnum
-					.getEnumPorCodigo(Integer.parseInt(usuario.getCodigoTipoUsuarioLojaTransiente())));
-		}
+		/*
+		 * if (usuario.getCodigoTipoUsuarioLojaTransiente() != null &&
+		 * usuario.getCodigoTipoUsuarioLojaTransiente() != vazio) {
+		 * 
+		 * usuario.setTipoUsuarioLojaEnum(TipoUsuarioLojaEnum
+		 * .getEnumPorCodigo(Integer.parseInt(usuario.getCodigoTipoUsuarioLojaTransiente
+		 * ()))); }
+		 */
 
 		if (usuario.getCodigoTipoUsuarioTransiente() != null && usuario.getCodigoTipoUsuarioTransiente() != vazio) {
 
@@ -184,50 +179,21 @@ public class UsuarioController extends EclinicController {
 			return retorno;
 		}
 
-		/*
-		 * if (result.hasErrors()) { ModelAndView mav = new
-		 * ModelAndView("usuario_incluir"); mav.addObject(MODEL_ATTR_ENTIDADE, usuario);
-		 * mav.addObject("perfis",
-		 * perfilService.listarPorCliente(usuarioLogado.getCliente()));
-		 * mav.addObject("usuario", usuario); mav.addObject("perfil", new Perfil());
-		 * mav.addObject("funcionalidades", perfilService.listarFuncionalidades());
-		 * return mav; } else {
-		 * 
-		 * List<Usuario> usuariosBanco = service.consultarPorLogin(usuario.getLogin(),
-		 * usuarioLogado.getCliente()); if (usuariosBanco.size() != 0) { ModelAndView
-		 * mav = new ModelAndView("usuario_incluir"); mav.addObject(MODEL_ATTR_ENTIDADE,
-		 * usuario); mav.addObject(MESSAGE_ERROR, getMensagem("usuario.existente"));
-		 * mav.addObject("perfis",
-		 * perfilService.listarPorCliente(usuarioLogado.getCliente()));
-		 * mav.addObject("usuario", usuario); mav.addObject("perfil", new Perfil());
-		 * mav.addObject("funcionalidades", perfilService.listarFuncionalidades());
-		 * return mav; } else { usuario.setCliente(usuarioLogado.getCliente());
-		 * ModelAndView retorno = new ModelAndView("usuario_incluir"); try {
-		 * service.salvar(usuario); retorno.addObject(MESSAGE,
-		 * getMensagem("inclusao.sucesso")); retorno.addObject("usuario", new
-		 * Usuario()); } catch (NegocioException erro) { retorno = new
-		 * ModelAndView("usuario_incluir"); retorno.addObject(MODEL_ATTR_ENTIDADE,
-		 * usuario); retorno.addObject(MESSAGE_ERROR, getMensagem("usuario.existente"));
-		 * retorno.addObject("perfis",
-		 * perfilService.listarPorCliente(usuarioLogado.getCliente()));
-		 * retorno.addObject("usuario", usuario); retorno.addObject("perfil", new
-		 * Perfil()); retorno.addObject("funcionalidades",
-		 * perfilService.listarFuncionalidades()); } return retorno; }
-		 * 
-		 * }
-		 */
 	}
 
 	@RequestMapping(value = URL_REQUEST_ALTERAR + "/{pk}", method = RequestMethod.GET)
 	public String exibirAlterar(@PathVariable Long pk, Model model, HttpServletRequest request) throws Exception {
+
 		Usuario usuarioLogado = HomeController.getUsuarioLogado(request);
 		Usuario usuarioAlteracao = service.buscar(pk);
+
 		if (usuarioAlteracao != null) {
+
+			usuarioAlteracao
+					.setCodigoTipoUsuarioTransiente(String.valueOf(usuarioAlteracao.getTipoUsuario().getCodigo()));
+
 			model.addAttribute(MODEL_ATTR_ENTIDADE, usuarioAlteracao);
-			/*
-			 * model.addAttribute("perfis",
-			 * perfilService.listarPorCliente(usuarioLogado.getCliente()));
-			 */
+			model.addAttribute("tipo", TipoUsuarioEnum.values());
 			model.addAttribute("alterarTela", "");
 			return "usuario_alterar";
 		} else {
@@ -235,49 +201,100 @@ public class UsuarioController extends EclinicController {
 		}
 	}
 
-	@RequestMapping(value = URL_REQUEST_GERENCIAR_CLIENTE + "/{pk}", method = RequestMethod.GET)
-	public String exibirGerenciarCliente(@PathVariable Long pk, Model model, HttpServletRequest request)
-			throws Exception {
-		Usuario usuarioAlteracao = service.buscar(pk);
-		if (usuarioAlteracao != null) {
-			model.addAttribute(MODEL_ATTR_ENTIDADE, usuarioAlteracao);
-/*			model.addAttribute("clientes", clienteService.listar());
-*/			return "usuario_gerenciar_cliente";
+	@RequestMapping(value = URL_REQUEST_ALTERAR, method = RequestMethod.POST)
+	public ModelAndView alterar(@ModelAttribute Usuario usuario, BindingResult result, Model model,
+			final RedirectAttributes redirectAttributes, HttpServletRequest request) throws ParseException {
+
+		String vazio = "";
+
+		ModelAndView modelAndView = new ModelAndView("usuario_incluir");
+		modelAndView.addObject(MODEL_ATTR_ENTIDADE, usuario);
+		modelAndView.addObject("tipo", TipoUsuarioEnum.values());
+
+		if (usuario.getCodigoTipoUsuarioTransiente() != null && usuario.getCodigoTipoUsuarioTransiente() != vazio) {
+
+			usuario.setTipoUsuario(
+					TipoUsuarioEnum.getEnumPorCodigo(Integer.parseInt(usuario.getCodigoTipoUsuarioTransiente())));
+		}
+
+		UsuarioValidator validator = new UsuarioValidator();
+		validator.validate(usuario, result);
+
+		if (result.hasErrors()) {
+
+			ModelAndView mav = new ModelAndView("usuario_alterar");
+			mav.addObject(MODEL_ATTR_ENTIDADE, usuario);
+			return mav;
+
 		} else {
-			return "redirect:../usuarios";
+
+			service.alterar(usuario);
+			redirectAttributes.addFlashAttribute(MESSAGE, getMensagem("alteracao.sucesso"));
+			ModelAndView retorno = new ModelAndView("redirect:/usuarios");
+			return retorno;
 		}
 	}
 
-	@RequestMapping(value = URL_REQUEST_GERENCIAR_CLIENTE, method = RequestMethod.POST)
-	public String gerenciarCliente(@ModelAttribute Usuario usuario, Model model) throws Exception {
+	/*
+	 * @RequestMapping(value = URL_REQUEST_ALTERAR, method = RequestMethod.POST)
+	 * public ModelAndView alterar(@ModelAttribute Usuario usuario, Model model,
+	 * BindingResult result, final RedirectAttributes redirectAttributes,
+	 * HttpServletRequest request) throws NumberFormatException, NegocioException {
+	 * 
+	 * UsuarioValidator validator = new UsuarioValidator();
+	 * validator.validate(usuario, result);
+	 * 
+	 * Usuario usuarioLogado = HomeController.getUsuarioLogado(request);
+	 * 
+	 * if (result.hasErrors()) { ModelAndView mav = new
+	 * ModelAndView("usuario_alterar"); mav.addObject(MODEL_ATTR_ENTIDADE, usuario);
+	 * 
+	 * return mav; } else { Usuario usuarioBanco =
+	 * service.consultarPorLogin(usuario.getLogin()); if (usuarioBanco != null &&
+	 * usuarioBanco.getId() != usuario.getId()) { ModelAndView mav = new
+	 * ModelAndView("usuario_alterar");
+	 * 
+	 * model.addAttribute("perfis",
+	 * perfilService.listarPorCliente(usuarioLogado.getCliente()));
+	 * 
+	 * mav.addObject(MODEL_ATTR_ENTIDADE, usuario); mav.addObject(MESSAGE_ERROR,
+	 * getMensagem("usuario.existente")); mav.addObject("perfis",
+	 * perfilService.listarPorCliente(usuarioLogado.getCliente())); return mav; }
+	 * else { usuario.setCliente(usuarioLogado.getCliente());
+	 * service.alterar(usuario); redirectAttributes.addFlashAttribute(MESSAGE,
+	 * getMensagem("alterar.sucesso")); ModelAndView retorno = new
+	 * ModelAndView("redirect:/usuarios"); return retorno; } } }
+	 */
 
-		Usuario usuarioAlteracao = service.buscar(usuario.getId());
+	/*
+	 * @RequestMapping(value = URL_REQUEST_GERENCIAR_CLIENTE + "/{pk}", method =
+	 * RequestMethod.GET) public String exibirGerenciarCliente(@PathVariable Long
+	 * pk, Model model, HttpServletRequest request) throws Exception { Usuario
+	 * usuarioAlteracao = service.buscar(pk); if (usuarioAlteracao != null) {
+	 * model.addAttribute(MODEL_ATTR_ENTIDADE, usuarioAlteracao);
+	 * 
+	 * model.addAttribute("clientes", clienteService.listar()); return
+	 * "usuario_gerenciar_cliente"; } else { return "redirect:../usuarios"; } }
+	 */
 
-		if (usuario.getClienteAdicionar() == null || usuario.getClienteAdicionar().getId() == null
-				|| usuario.getClienteAdicionar().getId() == 0) {
-			model.addAttribute("erroAdicionarClienteUsuario", "Erro: Selecione um cliente.");
-			model.addAttribute(MODEL_ATTR_ENTIDADE, usuarioAlteracao);
-/*			model.addAttribute("clientes", clienteService.listar());
-*/		} else {
-
-/*			Cliente clienteAdicionar = clienteService.buscar(usuario.getClienteAdicionar().getId());
-*/
-			/*if (isClienteValido(usuarioAlteracao.getClientesPermissao(), clienteAdicionar)) {
-				usuarioAlteracao.getClientesPermissao().add(clienteAdicionar);*/
-
-			/*	service.alterar(usuarioAlteracao);
-				model.addAttribute(MODEL_ATTR_ENTIDADE, usuarioAlteracao);
-				model.addAttribute("clientes", clienteService.listar());
-			} else {
-				model.addAttribute("erroAdicionarClienteUsuario", "Erro: Cliente já inserido.");
-				model.addAttribute(MODEL_ATTR_ENTIDADE, usuarioAlteracao);
-				model.addAttribute("clientes", clienteService.listar());
-			}*/
-
-		}
-
-		return "usuario_gerenciar_cliente";
-	}
+	/*
+	 * @RequestMapping(value = URL_REQUEST_GERENCIAR_CLIENTE, method =
+	 * RequestMethod.POST) public String gerenciarCliente(@ModelAttribute Usuario
+	 * usuario, Model model) throws Exception {
+	 * 
+	 * Usuario usuarioAlteracao = service.buscar(usuario.getId());
+	 * 
+	 * if (usuario.getClienteAdicionar() == null ||
+	 * usuario.getClienteAdicionar().getId() == null ||
+	 * usuario.getClienteAdicionar().getId() == 0) {
+	 * model.addAttribute("erroAdicionarClienteUsuario",
+	 * "Erro: Selecione um cliente."); model.addAttribute(MODEL_ATTR_ENTIDADE,
+	 * usuarioAlteracao);
+	 * 
+	 * }
+	 * 
+	 * return "usuario_gerenciar_cliente"; }
+	 */
 
 	@RequestMapping(value = "usuario/excluir_cliente", method = RequestMethod.POST)
 	public String excluirCliente(@ModelAttribute Usuario usuario, Model model) throws Exception {
@@ -292,8 +309,9 @@ public class UsuarioController extends EclinicController {
 
 		service.alterar(usuarioAlteracao);
 		model.addAttribute(MODEL_ATTR_ENTIDADE, usuarioAlteracao);
-/*		model.addAttribute("clientes", clienteService.listar());
-*/		return "usuario_gerenciar_cliente";
+		/*
+		 * model.addAttribute("clientes", clienteService.listar());
+		 */ return "usuario_gerenciar_cliente";
 
 	}
 
@@ -319,42 +337,6 @@ public class UsuarioController extends EclinicController {
 			return "usuario_visualizar";
 		} else {
 			return "redirect:../usuarios";
-		}
-	}
-
-	@RequestMapping(value = URL_REQUEST_ALTERAR, method = RequestMethod.POST)
-	public ModelAndView alterar(@ModelAttribute Usuario usuario, Model model, BindingResult result,
-			final RedirectAttributes redirectAttributes, HttpServletRequest request)
-			throws NumberFormatException, NegocioException {
-
-		UsuarioValidator validator = new UsuarioValidator();
-		validator.validate(usuario, result);
-
-		Usuario usuarioLogado = HomeController.getUsuarioLogado(request);
-
-		if (result.hasErrors()) {
-			ModelAndView mav = new ModelAndView("usuario_alterar");
-			mav.addObject(MODEL_ATTR_ENTIDADE, usuario);
-			mav.addObject("perfis", perfilService.listarPorCliente(usuarioLogado.getCliente()));
-			return mav;
-		} else {
-			Usuario usuarioBanco = service.consultarPorLogin(usuario.getLogin());
-			if (usuarioBanco != null && usuarioBanco.getId() != usuario.getId()) {
-				ModelAndView mav = new ModelAndView("usuario_alterar");
-
-				model.addAttribute("perfis", perfilService.listarPorCliente(usuarioLogado.getCliente()));
-
-				mav.addObject(MODEL_ATTR_ENTIDADE, usuario);
-				mav.addObject(MESSAGE_ERROR, getMensagem("usuario.existente"));
-				mav.addObject("perfis", perfilService.listarPorCliente(usuarioLogado.getCliente()));
-				return mav;
-			} else {
-				usuario.setCliente(usuarioLogado.getCliente());
-				service.alterar(usuario);
-				redirectAttributes.addFlashAttribute(MESSAGE, getMensagem("alterar.sucesso"));
-				ModelAndView retorno = new ModelAndView("redirect:/usuarios");
-				return retorno;
-			}
 		}
 	}
 

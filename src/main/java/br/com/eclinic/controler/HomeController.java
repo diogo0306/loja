@@ -67,16 +67,11 @@ public class HomeController extends EclinicController {
 	public static final String MENU_OFF = "MENU_OFF";
 	private static final String USUARIO_LOGADO = "usuarioLogado";
 
-	/*@Autowired
-	private ClienteService clienteService;*/
+	
 	@Autowired
 	private PerfilService perfilService;
 	@Autowired
 	private UsuarioService usuarioService;
-	/*@Autowired
-	private MedicoService medicoService;
-	@Autowired
-	private EventoService eventoService;*/
 
 	/**
 	 * Home - controller da página inicial do sistema.
@@ -93,46 +88,14 @@ public class HomeController extends EclinicController {
 			if (usuarioLogado.getTipoUsuario().equals(usuarioLogado.getTipoUsuario().equals(TipoUsuarioEnum.ADMIN)
 					|| usuarioLogado.getTipoUsuario().equals(TipoUsuarioEnum.OPERACIONAL))) {
 				request.getSession().setAttribute(USUARIO_LOGADO, usuarioLogado);
-				/*
-				 * request.getSession().setAttribute("clientes", clienteService.listar());
-				 */ model.addAttribute(USUARIO_LOGADO, usuarioLogado);
+				model.addAttribute(USUARIO_LOGADO, usuarioLogado);
 
 				request.getSession().setAttribute("usuario", usuarioLogado);
 				model.addAttribute("usuario", usuarioLogado);
 
-				/* retorno = "selecionar-cliente"; */
 				retorno = "home";
 
-			} /*
-				 * else { if (usuarioLogado.getClientesPermissao() != null &&
-				 * usuarioLogado.getClientesPermissao().size() > 1) {
-				 * request.getSession().setAttribute(USUARIO_LOGADO, usuarioLogado);
-				 * 
-				 * request.getSession().setAttribute("usuario", usuarioLogado);
-				 * model.addAttribute("usuario", usuarioLogado);
-				 * 
-				 * request.getSession().setAttribute("clientes",
-				 * usuarioLogado.getClientesPermissao()); model.addAttribute(USUARIO_LOGADO,
-				 * usuarioLogado); retorno = "selecionar-cliente"; } else {
-				 * model.addAttribute(USUARIO_LOGADO,
-				 * request.getSession().getAttribute(USUARIO_LOGADO));
-				 * request.getSession().setAttribute(USUARIO_LOGADO, usuarioLogado);
-				 * 
-				 * 
-				 * request.getSession().setAttribute("usuario",
-				 * request.getSession().getAttribute(USUARIO_LOGADO));
-				 * model.addAttribute("usuario",
-				 * request.getSession().getAttribute(USUARIO_LOGADO));
-				 * 
-				 * // usuarioLogado // .setPerfil(perfilService //
-				 * .consultarFuncionalidadesOperacoesUsuario(usuarioLogado // .getPerfil())); //
-				 * configurarFuncionalidadesUsuario(usuarioLogado, // request.getSession()); }
-				 * if (usuarioLogado.isExibirTelaAlterarSenha()) { OTDAlterarSenha otd = new
-				 * OTDAlterarSenha(); otd.setIdUsuario(usuarioLogado.getId());
-				 * model.addAttribute("otdAlterarSenha", otd); retorno =
-				 * "alterar.senha.sem.menu"; }
-				 */
-			/* } */
+			}
 
 		} else {
 			model.addAttribute(USUARIO_LOGADO, null);
@@ -196,27 +159,19 @@ public class HomeController extends EclinicController {
 
 				request.getSession().setAttribute("usuario", usuarioLogado);
 				model.addAttribute("usuario", usuarioLogado);
-
-				/*
-				 * request.getSession().setAttribute("clientes", clienteService.listar());
-				 */ request.getSession().setAttribute(LOGIN_INVALIDO, null);
-				/* return new ModelAndView("selecionar-cliente"); */
+				request.getSession().setAttribute(LOGIN_INVALIDO, null);
 				return new ModelAndView("home");
 
 			} else {
 				if (usuarioLogado.getClientesPermissao() != null && usuarioLogado.getClientesPermissao().size() > 1) {
 					request.getSession().setAttribute(USUARIO_LOGADO, usuarioLogado);
-					/*
-					 * request.getSession().setAttribute("clientes",
-					 * usuarioLogado.getClientesPermissao());
-					 */ model.addAttribute(USUARIO_LOGADO, usuarioLogado);
+
+					model.addAttribute(USUARIO_LOGADO, usuarioLogado);
 					request.getSession().setAttribute("usuario", usuarioLogado);
 					model.addAttribute("usuario", usuarioLogado);
 
 					request.getSession().setAttribute(LOGIN_INVALIDO, null);
-					/*
-					 * return new ModelAndView("selecionar-cliente");
-					 */
+
 					return new ModelAndView("home");
 
 				} else {
@@ -226,12 +181,6 @@ public class HomeController extends EclinicController {
 					request.getSession().setAttribute("usuario", usuarioLogado);
 					model.addAttribute("usuario", usuarioLogado);
 
-					// usuarioLogado
-					// .setPerfil(perfilService
-					// .consultarFuncionalidadesOperacoesUsuario(usuarioLogado
-					// .getPerfil()));
-					// configurarFuncionalidadesUsuario(usuarioLogado,
-					// request.getSession());
 				}
 				if (usuarioLogado.isExibirTelaAlterarSenha()) {
 					OTDAlterarSenha otd = new OTDAlterarSenha();
@@ -250,53 +199,7 @@ public class HomeController extends EclinicController {
 		}
 	}
 
-	/**
-	 * Página de erro do sistema.
-	 */
-	@RequestMapping(value = "/selecao-cliente", method = RequestMethod.POST)
-	public String selecionarCliente(@ModelAttribute Usuario usuario, Model model, BindingResult result,
-			HttpServletRequest request) {
 
-		Usuario usuarioLogado = (Usuario) request.getSession().getAttribute(USUARIO_LOGADO);
-
-/*		Cliente cliente = clienteService.buscar(usuario.getCliente().getId());
-		usuarioLogado.setCliente(cliente);
-*/
-		request.getSession().setAttribute(USUARIO_LOGADO, usuarioLogado);
-		model.addAttribute(USUARIO_LOGADO, request.getSession().getAttribute(USUARIO_LOGADO));
-		// usuarioLogado.setPerfil(perfilService
-		// .consultarFuncionalidadesOperacoesUsuario(usuarioLogado
-		// .getPerfil()));
-		// configurarFuncionalidadesUsuario(usuarioLogado, request.getSession());
-		return "home";
-	}
-
-	
-	/*@RequestMapping(value = "/agendamento/usuario", method = RequestMethod.POST)
-	public String sEv(@ModelAttribute Evento evento, HttpServletRequest request) throws Exception {
-
-		eventoService.salvar(evento);
-
-		return "agendamento-usuario";
-	}
-*/
-	// @ResponseBody
-	// @RequestMapping(value = "/agendamento/{idMedico}", method =
-	// RequestMethod.GET, produces=
-	// {org.springframework.http.MediaType.APPLICATION_JSON_VALUE})
-	// public Agenda buscarMedicos(@PathVariable String idMedico, Model model)
-	// throws NumberFormatException, NegocioException{
-	//
-	// Medico medicosBanco = medicoService.buscar(new Long(idMedico));
-	// Agenda a = new Agenda();
-	// a.setDomingo(true);
-	// a.setSegunda(true);
-	// a.setQuinta(true);
-	//
-	// return a;
-	// }
-
-	
 	private void configurarFuncionalidadesUsuario(Usuario usuarioLogado, HttpSession session) {
 
 		List<Funcionalidade> cadastros = perfilService

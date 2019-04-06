@@ -1,10 +1,7 @@
 package br.com.eclinic.entity.usuario;
 
-import br.com.eclinic.entity.usuarioLoja.TipoUsuarioLojaEnum;
-
 public enum TipoUsuarioEnum {
-	ADMIN("ADMIN", 1), OPERACIONAL("OPERACIONAL", 2), PACIENTE("PACIENTE", 3), MEDICO("MEDICO", 4),
-	REPRESENTANTE("REPRESENTANTE", 5), CREDENCIADO("CREDENCIADO", 6);
+	ADMIN("ADMIN", 1), OPERACIONAL("OPERACIONAL", 2);
 
 	private int codigo;
 	private String descricao;
@@ -32,18 +29,6 @@ public enum TipoUsuarioEnum {
 		}
 		if (codigo == 2) {
 			tipoUsuarioEnum = tipoUsuarioEnum.OPERACIONAL;
-		}
-		if (codigo == 3) {
-			tipoUsuarioEnum = tipoUsuarioEnum.PACIENTE;
-		}
-		if (codigo == 4) {
-			tipoUsuarioEnum = tipoUsuarioEnum.MEDICO;
-		}
-		if (codigo == 5) {
-			tipoUsuarioEnum = tipoUsuarioEnum.REPRESENTANTE;
-		}
-		if (codigo == 6) {
-			tipoUsuarioEnum = tipoUsuarioEnum.CREDENCIADO;
 		}
 
 		return tipoUsuarioEnum;
